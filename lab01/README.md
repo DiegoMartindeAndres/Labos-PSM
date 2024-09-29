@@ -201,8 +201,9 @@ Para ejecutar nuestra aplicación tal y como está en este momento:
 4. Una vez arrancado tu AVD (Android Virtual Device), no será necesario que lo apagues y lo vuelvas a arrancar cada vez que hagas un cambio en tu aplicación. Solo tendrás que pulsar el botón **Run** o **Re-Run** para que se actualice la aplicación en el emulador.
 
 
-<img src="img/botonRun.PNG" alt="Botón Run" width="45%" style="display:inline-block;">
-<img src="img/botonReRun.PNG" alt="Botón Re-Run" width="45%" style="display:inline-block;">
+| ![Botón Run](img/botonRun.PNG) | ![Botón Re-Run](img/botonReRun.PNG) |
+|:------------------------------:|:-----------------------------------:|
+| Botón Run                      | Botón Re-Run                       |
 
 
 ⌛ **Nota**: Esto puede tardar unos segundos o minutos, dependiendo de tu PC.
