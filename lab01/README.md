@@ -1,4 +1,4 @@
-# 📘 Laboratorio 02
+# 📘 Laboratorio 01: Primeros pasos en Android Studio
 
 ## Plataformas Software Móviles (PSM) 2024/2025
 
@@ -11,51 +11,13 @@ Ante cualquier error o sugerencia, por favor, contactame en mi correo: diego.mar
 ## 📝 Tabla de contenidos
 
 
-- [📘 Laboratorio 02](#-laboratorio-02)
-  - [Plataformas Software Móviles (PSM) 2024/2025](#plataformas-software-móviles-psm-20242025)
-    - [Nota.](#nota)
-  - [📝 Tabla de contenidos](#-tabla-de-contenidos)
+- [📘 Laboratorio 01: Primeros pasos en Android Studio](#-laboratorio-01-primeros-pasos-en-android-studio)
 - [Antes de empezar 🚀](#antes-de-empezar-)
 - [🎨 Configuración de la interfaz de usuario en Android Studio](#-configuración-de-la-interfaz-de-usuario-en-android-studio)
-  - [⚙️ Pasos para cambiar el tamaño de la fuente](#️-pasos-para-cambiar-el-tamaño-de-la-fuente)
 - [📱 Configuración del Dispositivo Virtual Android (AVD)](#-configuración-del-dispositivo-virtual-android-avd)
-  - [Introducción](#introducción)
-  - [¿Por qué usar un emulador? 🤔](#por-qué-usar-un-emulador-)
-  - [1. Acceso al **Device Manager** 🛠️](#1-acceso-al-device-manager-️)
-  - [2. Selección del dispositivo virtual 📱](#2-selección-del-dispositivo-virtual-)
-  - [3. Selección de la versión de Android 🧁](#3-selección-de-la-versión-de-android-)
-  - [4. Configuración del dispositivo virtual de Android (AVD) ⚙️](#4-configuración-del-dispositivo-virtual-de-android-avd-️)
-  - [5. Finalizar la configuración ✅](#5-finalizar-la-configuración-)
-  - [6. Ejecutar la aplicación en el emulador ▶️](#6-ejecutar-la-aplicación-en-el-emulador-️)
-  - [7. Personalización del emulador 🖥️](#7-personalización-del-emulador-️)
-  - [8. Ejecutar la aplicación en el emulador ▶️](#8-ejecutar-la-aplicación-en-el-emulador-️)
 - [🖼️ Vista previa de la interfaz de usuario (Preview)](#️-vista-previa-de-la-interfaz-de-usuario-preview)
-  - [1. ¿Qué es la vista previa? 🔍](#1-qué-es-la-vista-previa-)
-  - [2. ¿Para qué sirve? 🤔](#2-para-qué-sirve-)
-  - [3. ¿Dónde está la vista previa? 📑](#3-dónde-está-la-vista-previa-)
-  - [4. Uso de funciones en el código 🛠️](#4-uso-de-funciones-en-el-código-️)
-  - [5. Cambiar el texto en la vista previa ✏️](#5-cambiar-el-texto-en-la-vista-previa-️)
-  - [6. ¿Por qué es útil la vista previa? 🚀](#6-por-qué-es-útil-la-vista-previa-)
-  - [7. Explicación de lo que está pasando en el código 📝](#7-explicación-de-lo-que-está-pasando-en-el-código-)
-    - [1. **Ejecución en el AVD (Android Virtual Device) 🖥️:**](#1-ejecución-en-el-avd-android-virtual-device-️)
-    - [2. **Ejecución en el Preview 👁️:**](#2-ejecución-en-el-preview-️)
-    - [❓ ¿Por qué se muestra diferente en AVD y Preview?](#-por-qué-se-muestra-diferente-en-avd-y-preview)
-    - [🔄 ¿Cómo ayuda esto a reutilizar código?](#-cómo-ayuda-esto-a-reutilizar-código)
 - [🔍 Importaciones y bibliotecas 📚](#-importaciones-y-bibliotecas-)
-  - [1. Introducción al código 📜](#1-introducción-al-código-)
-  - [2. Importar código 📦](#2-importar-código-)
-  - [3. ¿Qué es una biblioteca? 📚](#3-qué-es-una-biblioteca-)
-  - [4. Temas de la aplicación 🎨](#4-temas-de-la-aplicación-)
 - [📋 Visión general de **MainActivity.kt**](#-visión-general-de-mainactivitykt)
-  - [Introducción 👋](#introducción-)
-  - [1. Definición de la clase 📝](#1-definición-de-la-clase-)
-    - [¿Qué es una clase? 🏫](#qué-es-una-clase-)
-  - [2. Actividades en Android 📱](#2-actividades-en-android-)
-  - [3. ¿Qué es una actividad? 🎬](#3-qué-es-una-actividad-)
-  - [4. Método `onCreate()` 🛠️](#4-método-oncreate-️)
-    - [¿Qué hace `onCreate()`?](#qué-hace-oncreate)
-  - [5. Función Greeting 🖋️](#5-función-greeting-️)
-    - [¿Qué es un Composable?](#qué-es-un-composable)
 
 
 ---
