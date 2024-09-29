@@ -1,12 +1,20 @@
 # 📘 Laboratorio 01: Primeros pasos en Android Studio
 
-## Plataformas Software Móviles (PSM) 2024/2025
+## Plataformas Software Móviles (PSM)
 
-Esta guía laboratorio ha elaborado por Diego Martín de Andrés para la asignatura Plataformas Software Móviles (PSM) del curso académico 2024/2025. 
+Estas guías de laboratorio han sido elaboradas por:
 
-### Nota.
+ **Diego Martín de Andrés** 
+ 
+ Para la asignatura **Plataformas Software Móviles (PSM)** 
+ 
+ En el curso académico 2024/2025. 🎓
 
-Ante cualquier error o sugerencia, por favor, contactame en mi correo: diego.martin.andres@uva.es
+---
+
+### 📌 Nota
+
+Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.martin.andres@uva.es](mailto:diego.martin.andres@uva.es) 📧.
 
 ## 📝 Tabla de contenidos
 
