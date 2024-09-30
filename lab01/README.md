@@ -32,7 +32,9 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 
 # Antes de empezar 🚀
 
-Es necesario que tengas creado un proyecto en **Android Studio**. Debe ser una **empty activity** y el espacio de nombres debe empezar por `es.uva.sg.psm.` seguido de un nombre que identifique tu aplicación. Por ejemplo, si estás en el **laboratorio 1**, podrías llamarlo `lab01`.
+Es necesario que tengas creado un proyecto en **Android Studio**. Debe ser una **empty activity** y el espacio de nombres debe empezar por `es.uva.sg.psm.` seguido de un nombre que identifique tu aplicación. Por ejemplo, si estás en el **laboratorio 1**, podrías llamarlo `lab01`. 
+
+Nota: en las imágenes que he tomado para este laboratorio, he llamado a mi proyecto `myfirstapp`.
 
 ---
 
