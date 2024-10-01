@@ -25,6 +25,10 @@ El contenido de este manual está basado en la documentación disponible en w3sc
 - [📏 Rangos (Ranges)](#-rangos-ranges)
 - [🔧 Funciones](#-funciones)
 - [🧱 La programación orientada a objetos en Kotlin](#-la-programación-orientada-a-objetos-en-kotlin)
+- [🚗 Clases y objetos](#-clases-y-objetos)
+- [🏗️ Constructores](#️-constructores)
+- [🔧 Funciones de clase](#-funciones-de-clase)
+- [👪 Herencia (subclases y superclases)](#-herencia-subclases-y-superclases)
 
 
 # 💻 Introducción a Kotlin
@@ -1755,7 +1759,7 @@ classDiagram
         +String Matrícula
         +String Número de bastidor
         +String Color
-        +float Peso
+        +Double Peso
 
         +void Arrancar()
         +void Acelerar()
@@ -1788,3 +1792,243 @@ classDiagram
 - Una **clase** es una plantilla para crear objetos.
 - Un **objeto** es una instancia de una clase.
 
+# 🚗 Clases y objetos
+
+Todo en Kotlin está asociado con clases y objetos, junto con sus propiedades y funciones. Por ejemplo: en la vida real, un coche es un **objeto**. El coche tiene **propiedades**, como marca, peso y color, y **funciones**, como conducir y frenar.  
+
+Una **Clase** es como un constructor de objetos, o un "plano" para crear objetos.
+
+---
+
+## 🛠️ Crear una Clase
+
+Para crear una clase, utiliza la palabra clave `class`, y especifica el nombre de la clase:
+
+### Ejemplo
+
+Crea una clase **Coche** junto con algunas **propiedades** o **atributos de clase** (marca, modelo y año):
+
+El diagrama de clases sería:
+```mermaid
+classDiagram
+    class Coche {
+        +String Modelo
+        +String Marca
+        +Int Año
+    }
+```
+
+En código sería:
+```kotlin	
+class Coche {
+  var modelo = ""
+  var marca = ""
+  var anio = 0
+}
+```
+
+### Nota 1:
+No es recomendable usar caracteres latinos (como la letra "ñ") en los nombres de las clases, variables, etc. ya que puede causar problemas en algunos editores de código. Aunque lo más probable es que funcione, es mejor evitarlo.
+
+### Nota 2:
+
+Una **propiedad** es básicamente una [**variable**](#-variables-1) que pertenece a la clase.
+
+**Recuerda:** Por conveniao es una buena práctica comenzar el nombre de una clase con una letra mayúscula, para mejor organización, al igual que se hacía en Java.
+
+---
+
+## 🏎️ Crear un Objeto
+
+Ahora podemos usar la clase llamada **Coche** para crear objetos.
+
+En el siguiente ejemplo, creamos un objeto de la clase **Coche** llamado **c1**, y luego accedemos a sus propiedades usando la sintaxis del punto (`.`), como hicimos para acceder a las propiedades de arrays y strings:
+
+### Ejemplo
+
+``` Kotlin
+// Crea un objeto c1 de la clase Coche
+val c1 = Coche()
+
+// Accede a las propiedades y añade algunos valores
+c1.brand = "Ford"
+c1.model = "Mustang"
+c1.year = 1969
+
+println(c1.brand)   // Imprime Ford
+println(c1.model)   // Imprime Mustang
+println(c1.year)    // Imprime 1969
+```
+
+---
+
+## 🔄 Múltiples Objetos
+
+Puedes crear tantos objetos de una clase como lo que requieras para resolver tu problema.
+
+### Ejemplo
+
+```
+val c1 = Coche()
+c1.brand = "Ford"
+c1.model = "Mustang"
+c1.year = 1969
+
+val c2 = Coche()
+c2.brand = "BMW"
+c2.model = "X5"
+c2.year = 1999
+
+println(c1.brand)  // Ford
+println(c2.brand)  // BMW
+```
+---
+
+# 🏗️ Constructores
+
+
+También se puede especificar un método **constructor** como se hace en Java.
+
+Un constructor es como una **función** especial, y se define usando dos paréntesis `()` después del nombre de la clase. Puedes especificar las propiedades dentro de los paréntesis (como pasar parámetros a una función normal).
+
+El constructor inicializa las propiedades cuando creas un objeto de una clase. Solo recuerda especificar el tipo de propiedad/variable:
+
+### Ejemplo
+
+``` Kotlin
+class Coche(var brand: String, var model: String, var year: Int)
+
+fun main() {
+  val c1 = Coche("Ford", "Mustang", 1969)
+}
+```
+
+[Prueba tú mismo](https://www.w3schools.com/KOTLIN/trykotlin.php?filename=demo_constructor) »
+
+Ahora es incluso más fácil especificar múltiples objetos de una clase:
+
+### Ejemplo
+
+```
+class Coche(var brand: String, var model: String, var year: Int)
+
+fun main() {
+  val c1 = Coche("Ford", "Mustang", 1969)
+  val c2 = Coche("BMW", "X5", 1999)
+  val c3 = Coche("Tesla", "Model S", 2020)
+}
+```
+
+[Prueba tú mismo](https://www.w3schools.com/KOTLIN/trykotlin.php?filename=demo_constructor2) »
+
+# 🔧 Funciones de clase
+
+Puedes utilizar [funciones](#-funciones) dentro de una clase para realizar ciertas acciones:
+
+### Ejemplo
+
+Crea una función `conducir()` dentro de la clase `Coche` y llámala:
+
+``` Kotlin
+class Coche(var brand: String, var model: String, var year: Int) {
+  // Función de clase
+  fun conducir() {
+    println("Wrooom!")
+  }
+}
+
+fun main() {
+  val c1 = Coche("Ford", "Mustang", 1969)
+  
+  // Llama a la función
+  c1.conducir()
+}
+```
+
+[Prueba tú mismo](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_class_function) »
+
+💡 **Tip**: Cuando una función es declarada dentro de una clase, se le conoce como una **función de clase** o **función miembro**.
+
+---
+
+## Parámetros en las Funciones de Clase
+
+Al igual que con las funciones regulares, puedes pasar parámetros a una función de clase:
+
+### Ejemplo
+
+Crea dos funciones: `conducir()` y `velocidad()`, y pasa parámetros a la función `velocidad()`:
+
+```Kotlin
+class Coche(var brand: String, var model: String, var year: Int) {
+  // Función de clase
+  fun conducir() {
+    println("Wrooom!")
+  }
+  
+  // Función de clase con parámetros
+  fun velocidad(maxSpeed: Int) {
+    println("La velocidad máxima es: $maxSpeed")
+  }
+}
+
+fun main() {
+  val c1 = Coche("Ford", "Mustang", 1969)
+  
+  // Llama a las funciones
+  c1.conducir()
+  c1.velocidad(200)
+}
+```
+
+[Prueba tú mismo](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_class_function2) »
+
+---
+
+# 👪 Herencia (subclases y superclases)
+
+
+En Kotlin, es posible heredar propiedades y funciones de una clase madre. El concepto de "herencia" se divide en dos categorías:
+
+- **subclases** (o clase hija) - la clase que hereda de otra la clase madre
+- **superclases** (o clase madre) - la clase de la que se hereda
+
+En el siguiente ejemplo, `MyChildClass` (subclase) hereda las propiedades de la clase `MyParentClass` (superclase):
+
+### Ejemplo
+
+``` Kotlin
+// Superclass
+open class MyParentClass {
+  val x = 5
+}
+
+// Subclass
+class MyChildClass : MyParentClass() {
+  fun myFunction() {
+    println(x) // x ahora es heredado de la superclase
+  }
+}
+
+// Crea un objeto de MyChildClass y llama a myFunction
+fun main() {
+  val myObj = MyChildClass()
+  myObj.myFunction()
+}
+```
+
+[Prueba tú mismo](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_inheritance) »
+
+---
+
+## Explicación del Ejemplo
+
+Usa la palabra clave reservada `open` antes de la **superclase** o **clase madre** para permitir que otras clases hereden propiedades y funciones de ella.
+
+Para heredar de una clase, especifica el nombre de la **subclases** o **clase hija**, seguido de dos puntos `:`, y luego el nombre de la **superclases** o **clase madre**.
+
+💡 **¿Por qué y cuándo usar la herencia?**  
+- Es útil para la reutilización del código: puedes reutilizar propiedades y funciones de una clase existente cuando creas una nueva clase. Es útil para mantener el principio  [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+  
+
+---
