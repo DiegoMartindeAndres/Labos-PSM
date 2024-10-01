@@ -2031,23 +2031,4 @@ Para heredar de una clase, especifica el nombre de la **subclases** o **clase hi
 - Es útil para la reutilización del código: puedes reutilizar propiedades y funciones de una clase existente cuando creas una nueva clase. Es útil para mantener el principio  [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
   
 
----
 
-### Solución
-<details>
-  <summary>Haz clic para ver el código</summary>
-
-``` Kotlin
-if (playerChoice == computerChoice) {
-    println("Es un empate!")
-} else if ((playerChoice == "piedra" && computerChoice == "tijeras") ||
-           (playerChoice == "papel" && computerChoice == "piedra") ||
-           (playerChoice == "tijeras" && computerChoice == "papel")) {
-    println("¡Ganaste!")
-} else {
-    println("La computadora gana.")
-}
-```
-</details>
-
-## más texto
