@@ -2032,3 +2032,22 @@ Para heredar de una clase, especifica el nombre de la **subclases** o **clase hi
   
 
 ---
+
+### Solución
+<details>
+  <summary>Haz clic para ver el código</summary>
+
+``` Kotlin
+if (playerChoice == computerChoice) {
+    println("Es un empate!")
+} else if ((playerChoice == "piedra" && computerChoice == "tijeras") ||
+           (playerChoice == "papel" && computerChoice == "piedra") ||
+           (playerChoice == "tijeras" && computerChoice == "papel")) {
+    println("¡Ganaste!")
+} else {
+    println("La computadora gana.")
+}
+```
+</details>
+
+## más texto
