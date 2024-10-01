@@ -18,6 +18,6 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 ## 📝 Tabla de contenidos
 
 1. [Laboratorio 00: Manual Rápido de Kotlin](./ManualRapidoKotlin/README.md)
-2. [Laboratorio 01: Primeros pasos en Android Studio](./lab01/README.md)
+2. [Laboratorio 01: Primeros pasos en Android Studio](./labo01/README.md)
 
 (Iremos añadiendo más laboratorios a medida que avance el curso).
