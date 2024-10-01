@@ -8,6 +8,7 @@ El contenido de este manual está basado en la documentación disponible en w3sc
 
 ## 📝 Tabla de contenidos
 
+- [📘 Manual rápido de Kotlin](#-manual-rápido-de-kotlin)
 - [💻 Introducción a Kotlin](#-introducción-a-kotlin)
 - [📝 Comentario en Kotlin](#-comentario-en-kotlin)
 - [📊 Variables](#-variables-1)
@@ -23,6 +24,7 @@ El contenido de este manual está basado en la documentación disponible en w3sc
 - [🔄 Bucles For](#-bucles-for)
 - [📏 Rangos (Ranges)](#-rangos-ranges)
 - [🔧 Funciones](#-funciones)
+- [🧱 La programación orientada a objetos en Kotlin](#-la-programación-orientada-a-objetos-en-kotlin)
 
 
 # 💻 Introducción a Kotlin
@@ -1250,9 +1252,9 @@ println(result)
 
 # 🔁 Bucle While
 
-## Loops
+## LPOOs
 
-Los bucles (o loops) pueden ejecutar un bloque de código mientras se cumpla una condición específica.
+Los bucles (o lPOOs) pueden ejecutar un bloque de código mientras se cumpla una condición específica.
 
 Los bucles son útiles porque ahorran tiempo, reducen errores y hacen que el código sea más legible.
 
@@ -1282,7 +1284,7 @@ while (i < 5) {
 }
 ```
 
-[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_while_loop)
+[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_while_lPOO)
 
 **Nota:** No olvides incrementar la variable usada en la condición, de lo contrario, el bucle nunca terminará.
 
@@ -1310,7 +1312,7 @@ do {
 } while (i < 5)
 ```
 
-[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_do_while_loop)
+[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_do_while_lPOO)
 
 **Nota:** No olvides incrementar la variable usada en la condición, de lo contrario, el bucle nunca terminará.
 
@@ -1459,7 +1461,7 @@ for (x in cars) {
 }
 ```
 
-[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_loop)
+[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_lPOO)
 
 ---
 
@@ -1480,7 +1482,7 @@ for (x in cars) {
 }
 ```
 
-[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_loop)
+[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_lPOO)
 
 ---
 
@@ -1496,7 +1498,7 @@ for (x in nums) {
 }
 ```
 
-[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_loop2)
+[Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_array_for_lPOO2)
 
 ---
 
@@ -1717,3 +1719,72 @@ fun main() {
 [Prueba este código](https://www.w3schools.com/kotlin/trykotlin.php?filename=demo_function_assignment)
 
 ---
+
+# 🧱 La programación orientada a objetos en Kotlin
+
+## ¿Qué es POO?
+
+POO significa **Programación Orientada a Objetos** (Object-Oriented Programming).
+
+La programación procedimental se centra en escribir procedimientos o métodos que operan sobre los datos, mientras que la programación orientada a objetos se centra en crear **objetos** que contienen tanto datos como métodos.
+
+Algunas ventajas de la programación orientada a objetos frente a la programación procedimental son:
+
+- POO es más rápida y fácil de ejecutar.
+- POO proporciona una estructura clara para los programas.
+- POO ayuda a mantener el código DRY ("Don't Repeat Yourself"), lo que facilita el mantenimiento, la modificación y la depuración del código.
+- POO permite crear aplicaciones reutilizables completas con menos código y en menos tiempo de desarrollo.
+
+**Tip:** El principio ["Don't Repeat Yourself" (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) consiste en reducir la repetición de código. Debes extraer las partes comunes de tu aplicación y colocarlas en un único lugar, reutilizándolas en lugar de repetirlas.
+
+---
+
+## ¿Qué son las Clases y los Objetos?
+
+Las **clases** y los **objetos** son los dos principales conceptos en la programación orientada a objetos.
+
+Seguro que ya lo conoces de la asignatura "Programación Orientada a Objetos"
+
+### Ejemplo:
+
+```mermaid
+classDiagram
+    class Coche {
+        +String Modelo
+        +String Marca
+        +String Matrícula
+        +String Número de bastidor
+        +String Color
+        +float Peso
+
+        +void Arrancar()
+        +void Acelerar()
+        +void Frenar()
+        +void CambiarMarcha(int marcha)
+    }
+
+    Coche <|-- Coche1 : Implementación
+    Coche <|-- Coche2 : Implementación
+
+    class Coche1 {
+        +String Modelo = "Model S"
+        +String Marca = "Tesla"
+        +String Matrícula = "1234ABC"
+        +String Número de bastidor = "5YJSA1E26HF000316"
+        +String Color = "Rojo"
+        +float Peso = 2000.5
+    }
+
+    class Coche2 {
+        +String Modelo = "Mustang"
+        +String Marca = "Ford"
+        +String Matrícula = "5678XYZ"
+        +String Número de bastidor = "1ZVBP8CF4C5262931"
+        +String Color = "Azul"
+        +float Peso = 1700.8
+    }
+```
+
+- Una **clase** es una plantilla para crear objetos.
+- Un **objeto** es una instancia de una clase.
+
