@@ -6,7 +6,7 @@
 
 ### Nota:
 
-Este laboratorio está basado en los de la asignatura **_Programación_** de la **Universidad Politécnica**, donde fui profesor colaborador y cuyo coordinador es Juan Carlos Dueñas. 
+Este laboratorio está basado en los de la asignatura **_Programación_** del [**Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación**](https://www.etsit.upm.es/estudios/grado-en-ingenieria-de-tecnologias-y-servicios-de-telecomunicacion.html) de la [**Universidad Politécnica de Madrid**](www.upm.es), donde fui profesor colaborador y cuyo coordinador es Juan Carlos Dueñas. 
 
 Los ejercicios se han adaptado a Kotlin y a la programación en Android Studio.
 
