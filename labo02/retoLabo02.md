@@ -1,11 +1,10 @@
-# Objetivos
+# Objetivos 🎯
 
 1. Repasar el uso de variables y aprender a manejar referencias en Kotlin.
 2. Crear funciones sencillas, tanto con la ayuda de Android Studio como a mano.
 3. Repasar las clases predefinidas e introducir algunas clases nuevas.
 
 **Antes de la sesión de laboratorio**
-
 
 En cada sesión de laboratorio, para resolver las actividades que se plantean deberá seguir los siguientes pasos:
 
@@ -15,71 +14,73 @@ En cada sesión de laboratorio, para resolver las actividades que se plantean de
 4. Compruebe que la clase funciona bien (*pruebas*), para lo que puede incluir un método `main` en el que se crean objetos de la clase y se llama a sus métodos con diferentes parámetros, mostrando en la pantalla los resultados o comparándolos con los resultados esperados (que debe haber calculado a mano). También debe hacerlo en el laboratorio, o después.
 
 Revise el siguiente enlace, contiene documentación sobre las clases predefinidas, puede ser muy útil:
-[[https://kotlinlang.org/api/latest/jvm/stdlib/]{.underline}](https://kotlinlang.org/api/latest/jvm/stdlib/)
+
+[Clases predefinidas en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/)
 
 Busque paquete [`kotlin.math`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/) y localice la descripción de sus atributos y los métodos `cos` y `sin`.
 
-# Actividades 
+¿Qué ángulos usa? ¿Radianes o grados sexagesimales? ¿Cómo podríamos saberlo?
+
+# Actividades 📝
 
 1. **Creación de un proyecto llamado `retoLabo02`**
 
 - Cree un proyecto en Android Studio llamado `retoLabo02` y añada un paquete llamado `es.uva.sg.psm.retoLabo2`.
-
 - Cree una **empty activity**  
+- Cree un fichero llamado `pruebaSeries` y una función llamada `main` que se encargue de llamar a las funciones que se describen en los retos.
 
-- Cree un fichero llamado `pruebaSeries` cree una función llamada `main` que se encargue de llamar a las funciones que se describen en los retos.
-
-## Reto 1: Comparar objetos y comparar referencias
+## Reto 1: Comparar objetos y comparar referencias 🔍
 
 Las referencias permiten manejar objetos. En la teoría ya habrá visto en la asignatura **"Programación orientada a objetos"** que no es lo mismo comparar referencias (son iguales si apuntan al mismo objeto) que comparar objetos (son iguales si los valores de los atributos son iguales).
 
 El reto consiste en adivinar el resultado de unas operaciones que comparan objetos y referencias antes de ejecutar el programa.
 
-![Lisa Simpson](imgReto/image4.png)
+<div align="center">
+    <img src="imgReto/image4.png" alt="Lisa Simpson">
+</div>
 
-Puede seguir estos pasos:
+### Pasos
 
-1. Cree una clase que se llame `CapituloSerie`, donde cada objeto será un episodio de una temporada de una serie. Por ejemplo, el primer capítulo de la temporada décima de **"Los Simpsons"**. Puede crearlo en el el mismo fichero `pruebaSeries` o en otro fichero como hacíamos en Java.
+1. Cree una clase que se llame `CapituloSerie`, donde cada objeto será un episodio de una temporada de una serie. Por ejemplo, el primer capítulo de la temporada décima de **"Los Simpsons"**. Puede crearlo en el mismo fichero `pruebaSeries` o en otro fichero como hacíamos en Java.
 
 2. Defina estos tres atributos en la clase:
+   
+   ```kotlin
+   class CapituloSerie(
+       var serie: String,
+       var temporada: Int,
+       var episodio: Int
+   )
+   ```
 
-``` Kotlin
-class CapituloSerie(
-    var serie: String,
-    var temporada: Int,
-    var episodio: Int
-)
-```
-
-![Winter is coming](imgReto/image7.jpg)
+<div align="center">
+    <img src="imgReto/image7.jpg" alt="Winter is coming">
+</div>
 
 3. Otro ejemplo de método que puede crear automáticamente es `toString()`, que sirve para obtener un `String` con los valores de los atributos de un objeto, que luego puede imprimir. 
-   1. Coloca el cursor dentro de la clase. Coloca el cursor dentro del cuerpo de la clase (entre las llaves {}), en cualquier parte del código de la clase.
+   
+   1. Coloca el cursor dentro de la clase, entre las llaves `{}`.
+   2. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS) o en el menú superior seleccionando "Code" y luego "Generate".
+   3. Selecciona "toString()".
+   4. Selecciona los atributos que quieres mostrar (en este caso, serie, temporada y episodio).
+   5. Android Studio generará automáticamente el método `toString()` basado en los atributos seleccionados.
 
-   2. Abre el menú de generación. Presiona Alt + Insert (o Cmd + N en macOS) para abrir el menú de generación automática. También puedes acceder a este menú, en el menú superior, seleccionando "Code" y luego "Generate".
+<div align="center">
+    <img src="imgReto/image3.png" alt="Homer Simpson">
+</div>
 
-   3. Selecciona "toString()". En el menú que aparece, selecciona la opción toString().
+4. Cree un método para comparar objetos (no referencias) generando los métodos `equals()` y `hashCode()`.
 
-   4. Selecciona los atributos. Aparecerá una ventana que te permitirá seleccionar qué atributos incluir en el método toString(). Selecciona los atributos que quieres mostrar (en este caso, serie, temporada, y episodio).
+   1. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS).
+   2. Selecciona "equals() y hashCode()".
+   3. Selecciona los atributos relevantes (serie, temporada y episodio).
+   4. Android Studio generará el código para los métodos `equals()` y `hashCode()`.
 
-   5. Generación automática. Android Studio generará automáticamente el método toString() basado en los atributos seleccionados.
+### Añade la función `main()`
 
+Antes de ejecutarlo, apunte lo que cree que va a aparecer en la pantalla cuando se llame a `println` las 18 veces.
 
-![Homer Simpson](imgReto/image3.png)
-
-4. Por último, puede crear un método para comparar objetos (no referencias). Coloca el cursor dentro de la clase. Coloca el cursor en el cuerpo de la clase, donde desees que se generen los métodos equals() y hashCode(). También puedes acceder a este menú, en el menú superior, seleccionando "Code" y luego "Generate".
-
-   1. Abre el menú de generación. Presiona Alt + Insert (o Cmd + N en macOS) para abrir el menú de generación automática.
-
-   2. Selecciona "equals() y hashCode()". En el menú que aparece, selecciona la opción equals() y hashCode().
-
-   3. Selecciona los atributos. Android Studio te mostrará una ventana para seleccionar los atributos que quieres utilizar para comparar y generar los códigos hash. Selecciona los atributos que sean relevantes para la igualdad y el cálculo del hash (en este caso, serie, temporada, y episodio).
-
-   4. Generación automática. Android Studio generará el código para los métodos equals() y hashCode().
-
-2. Añade la siguiente función `main()`. Antes de ejecutarlo, apunte lo que cree que va a aparecer en la pantalla cuando se llame a `println` las 18 veces.
-
-``` Kotlin
+```kotlin
 fun main() {
     val p1 = CapituloSerie("Los Simpson", 1, 10)
     val p2 = CapituloSerie("Juego de Tronos", 1, 5)
@@ -112,43 +113,45 @@ fun main() {
     println("p3 y p2 son el mismo objeto = ${p3 === p2Mutable}")
     println("p3 y p2 son objetos iguales = ${p3 == p2Mutable}")
 }
-```	
+```
 
 4. Ejecute el programa y compare el resultado con lo que había previsto. ¿Cuántas ha acertado?
 
-![Bart Simpson](imgReto/image6.png)
+<div align="center">
+    <img src="imgReto/image6.png" alt="Bart Simpson">
+</div>
 
-## Reto 2: Hacer cálculos aritméticos - Angry Birds
+## Reto 2: Hacer cálculos aritméticos - Angry Birds 🐦
 
-![Angrybird](imgReto/image2.jpg)
+<div align="center">
+    <img src="imgReto/image2.jpg" alt="Angrybird">
+</div>
 
-
-Seguro que alguna vez ha jugado a Angry Birds. El reto consiste en saber cuánto tiempo durará el vuelo de un Angry Bird, la altura máxima que alcanzará y a qué distancia impactará contra un cerdito, si lo lanzamos con una determinada velocidad inicial y ángulo.
+El reto consiste en saber cuánto tiempo durará el vuelo de un Angry Bird, la altura máxima que alcanzará y a qué distancia impactará contra un cerdito, si lo lanzamos con una determinada velocidad inicial y ángulo.
 
 Es un claro caso de trayectoria parabólica. Lo lanzamos con altura inicial 0 (desde el suelo), en vacío (sin rozamiento del aire), y el cerdito está también en el suelo.
 
-![Trayectorio Parabólica](imgReto/image1.jpg)
-
-
-Para ello crea el fichero `AngryBird.kt`. Para escribir el programa iremos resolviendo los retos uno por uno.
+<div align="center">
+    <img src="imgReto/image1.jpg" alt="Trayectoria Parabólica">
+</div>
 
 ### Reto 2.1: Añadir atributos, toString
 
 En el fichero `AngryBird.kt` debe repetir las operaciones que ha hecho en `CapituloSerie`, usando ahora estos atributos (aparte de la constante `g` que ya está definida):
 
-``` Kotlin
+```kotlin
 private var id: String // nombre del AngryBird
 private var v: Double // valor del módulo de la velocidad
 private var angulo: Double // ángulo sobre la superficie en radianes
 ```
 
-Cree el método `toString()` Utilice los menús de Android Studio para generarlos.
+Cree el método `toString()` utilizando los menús de Android Studio para generarlos.
 
 ### Reto 2.2: Calcular la duración del vuelo
 
 La velocidad inicial de lanzamiento `(v)` tiene una componente horizontal `(vx)` y otra vertical `(vy)`:
 
-``` 
+```
 v² = vx² + vy²
 vx = v * cos(angulo)
 vy = v * sin(angulo)
@@ -178,7 +181,7 @@ Escriba un método `getTiempo()` que devuelva el tiempo total de vuelo usando `t
 
 Para calcular la altura máxima alcanzada se usa la ecuación de la aceleración constante:
 
-```
+```kotlin
 h = vy² / (2 * g)
 ```
 
@@ -186,8 +189,9 @@ Escriba el método `getAltura()` que devuelva la altura máxima.
 
 ### Reto 2.4: Calcular la distancia al punto de impacto
 
-![Angry Bird](imgReto/image5.jpg)
-
+<div align="center">
+    <img src="imgReto/image5.jpg" alt="Angry Bird">
+</div>
 
 Para calcular la distancia hasta el punto de impacto se usa la ecuación:
 
@@ -202,3 +206,24 @@ Haga en papel o calculadora algún caso sencillo antes de ejecutar `PruebaAngryB
 ¿Están bien los cálculos?
 
 - Asegúrese de que las funciones `cos` y `sin` reciben ángulos en radianes.
+
+Prueba tu clase `AngryBird` con el siguiente código:
+
+```kotlin
+fun main() {
+    print("Introduzca la velocidad inicial de disparo (real, cuidado con la coma decimal) = ")
+    val velocidad = readlnOrNull()?.toDoubleOrNull() ?: error("Valor no válido para la velocidad")
+
+    print("Introduzca el angulo de disparo (real, cuidado con la coma decimal) = ")
+    val angulo = readlnOrNull()?.toDoubleOrNull() ?: error("Valor no válido para el ángulo")
+
+    val ab = AngryBird("Pajaro Bomba", velocidad, angulo)
+    println(ab.toString())
+
+    println("Tiempo = ${ab.getTiempo()}")
+    println("Altura maxima = ${ab.getAltura()}")
+    println("Distancia = ${ab.getDistancia()}")
+}
+```
+
+## ¿Obtienes los resultados correctos? ¿Cómo podrías probarlo?

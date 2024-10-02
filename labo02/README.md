@@ -19,17 +19,18 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 ## 📝 Tabla de contenidos
 
 - [📘 Laboratorio 01: Primeros pasos en Android Studio](#-laboratorio-01-primeros-pasos-en-android-studio)
-- [Introducción al juego "Piedra, Papel o Tijeras" ✂️📄🪨](#introducción-al-juego-piedra-papel-o-tijeras-️)
+- [Introducción al juego "Piedra, Papel o Tijeras" 🚽✂️📄](#introducción-al-juego-piedra-papel-o-tijeras-️)
 - [Entrada de Datos del Usuario y Condicionales en Kotlin 🎮](#entrada-de-datos-del-usuario-y-condicionales-en-kotlin-)
 - [Aplicación de Piedra, Papel o Tijeras en Kotlin 🕹️](#aplicación-de-piedra-papel-o-tijeras-en-kotlin-️)
 - [¿Pero qué es `?:`?](#pero-qué-es-)
-- [Continuando con la aplicación de Piedra, Papel o Tijeras 🪨 📄 ✂️](#continuando-con-la-aplicación-de-piedra-papel-o-tijeras---️)
-- [Finalizando la aplicación de Piedra, Papel o Tijeras 🎮✂️📄](#finalizando-la-aplicación-de-piedra-papel-o-tijeras-️)
+- [Continuando con la aplicación de Piedra, Papel o Tijeras 🚽 📄 ✂️](#continuando-con-la-aplicación-de-piedra-papel-o-tijeras---️)
+- [Finalizando la aplicación de Piedra, Papel o Tijeras 🚽✂️📄](#finalizando-la-aplicación-de-piedra-papel-o-tijeras-️)
 - [Sentencias While en Kotlin 🔄](#sentencias-while-en-kotlin-)
 
 ---
 
-# Introducción al juego "Piedra, Papel o Tijeras" ✂️📄🪨
+# Introducción al juego "Piedra, Papel o Tijeras" 🚽✂️📄
+(Es cierto un inodoro no es una piedra, pero suelen ser Roca que es lo más parecido a una piedra 😂)
 
 ## Introducción
 Vamos a programar el juego **Piedra, Papel o Tijeras** en Kotlin. Antes de adentrarnos en los detalles de cómo progamar la aplicación, vamos a reflexionar en términos generales sobre lo que necesitamos.
@@ -293,7 +294,7 @@ if (playerChoice == computerChoice) {
 
 ---
 
- # Continuando con la aplicación de Piedra, Papel o Tijeras 🪨 📄 ✂️
+ # Continuando con la aplicación de Piedra, Papel o Tijeras 🚽 📄 ✂️
 
 Vamos a seguir desarrollando la aplicación de **Piedra, Papel o Tijeras**. Vamos a reemplazar el código usando sentencias `when`.
 
@@ -361,7 +362,7 @@ Puedes pedirle a **Android Studio** que reemplace automáticamente las sentencia
 ---
 
  
-# Finalizando la aplicación de Piedra, Papel o Tijeras 🎮✂️📄
+# Finalizando la aplicación de Piedra, Papel o Tijeras 🚽✂️📄
 
 
 ## Lógica para determinar el ganador 🏆

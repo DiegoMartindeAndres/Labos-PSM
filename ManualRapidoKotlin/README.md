@@ -1834,7 +1834,7 @@ No es recomendable usar caracteres latinos (como la letra "ñ") en los nombres d
 
 Una **propiedad** es básicamente una [**variable**](#-variables-1) que pertenece a la clase.
 
-**Recuerda:** Por conveniao es una buena práctica comenzar el nombre de una clase con una letra mayúscula, para mejor organización, al igual que se hacía en Java.
+**Recuerda:** Por convenio es una buena práctica comenzar el nombre de una clase con una letra mayúscula, para mejor organización, al igual que se hacía en Java.
 
 ---
 
