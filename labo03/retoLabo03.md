@@ -111,6 +111,10 @@ $$
 d = \big( (A - 1) \% 7 + \Big( \frac{A - 1}{4} - 3 \cdot \frac{\frac{A - 1}{100} + 1}{4} \Big) \% 7 + M + D \% 7 \big) \% 7
 $$
 
+Tercera:
+
+$d = \left( (A - 1) \% 7 + \left( \frac{A - 1}{4} - 3 \cdot \frac{\left(\frac{A - 1}{100} + 1 \right)}{4} \right) \% 7 + M + D \% 7 \right) \% 7$
+
 
 
 Donde:
