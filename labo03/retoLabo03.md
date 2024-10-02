@@ -101,21 +101,6 @@ El reto consiste en escribir una clase completa `ElementoRadiactivo`, con el mí
 
 Hay una fórmula para calcular el día de la semana de cualquier fecha:
 
-$$
-d = \left( (A - 1) \% 7 + \left( \frac{A - 1}{4} - 3 \cdot \frac{\left(\frac{A - 1}{100} + 1 \right)}{4} \right) \% 7 + M + D \% 7 \right) \% 7
-$$
-
-Segunda fórmula.
-
-$$
-d = \big( (A - 1) \% 7 + \Big( \frac{A - 1}{4} - 3 \cdot \frac{\frac{A - 1}{100} + 1}{4} \Big) \% 7 + M + D \% 7 \big) \% 7
-$$
-
-Tercera:
-
-$d = \left( (A - 1) \% 7 + \left( \frac{A - 1}{4} - 3 \cdot \frac{\left(\frac{A - 1}{100} + 1 \right)}{4} \right) \% 7 + M + D \% 7 \right) \% 7$
-
-Cuarta:
 ```math
 d = \big( (A - 1) \% 7 + \Big( \frac{A - 1}{4} - 3 \cdot \frac{\frac{A - 1}{100} + 1}{4} \Big) \% 7 + M + D \% 7 \big) \% 7
 ```
