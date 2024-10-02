@@ -4,7 +4,13 @@
 2. Crear funciones sencillas, tanto con la ayuda de Android Studio como a mano.
 3. Repasar las clases predefinidas e introducir algunas clases nuevas.
 
-**Antes de la sesión de laboratorio**
+### Nota:
+
+Este laboratorio está basado en los de la asignatura **_Programación_** de la **Universidad Politécnica**, donde fui profesor colaborador y cuyo coordinador es Juan Carlos Dueñas. 
+
+Los ejercicios se han adaptado a Kotlin y a la programación en Android Studio.
+
+## Antes de la sesión de laboratorio
 
 En cada sesión de laboratorio, para resolver las actividades que se plantean deberá seguir los siguientes pasos:
 
