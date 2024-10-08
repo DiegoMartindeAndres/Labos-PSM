@@ -1,4 +1,4 @@
-# 📘 Laboratorio 01: Primeros pasos en Android Studio
+# 📘 Laboratorio 02: Piedra, papel y tijeras 🚽✂️📄
 
 ## Plataformas Software Móviles (PSM)
 
@@ -18,7 +18,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 
 ## 📝 Tabla de contenidos
 
-- [📘 Laboratorio 01: Primeros pasos en Android Studio](#-laboratorio-01-primeros-pasos-en-android-studio)
+- [📘 Laboratorio 02: Piedra, papel y tijeras 🚽✂️📄](#-laboratorio-02-piedra-papel-y-tijeras-️)
 - [Introducción al juego "Piedra, Papel o Tijeras" 🚽✂️📄](#introducción-al-juego-piedra-papel-o-tijeras-️)
 - [Entrada de Datos del Usuario y Condicionales en Kotlin 🎮](#entrada-de-datos-del-usuario-y-condicionales-en-kotlin-)
 - [Aplicación de Piedra, Papel o Tijeras en Kotlin 🕹️](#aplicación-de-piedra-papel-o-tijeras-en-kotlin-️)
@@ -30,7 +30,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 ---
 
 # Introducción al juego "Piedra, Papel o Tijeras" 🚽✂️📄
-(Es cierto un inodoro no es una piedra, pero suelen ser Roca que es lo más parecido a una piedra 😂)
+(Es cierto, no es una piedra, pero es un inodoro y estos pero suelen ser Roca que es lo más parecido a una piedra 😂)
 
 ## Introducción
 Vamos a programar el juego **Piedra, Papel o Tijeras** en Kotlin. Antes de adentrarnos en los detalles de cómo progamar la aplicación, vamos a reflexionar en términos generales sobre lo que necesitamos.

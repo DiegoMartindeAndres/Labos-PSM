@@ -1,22 +1,35 @@
+# Reto Labo 02: Variables, referencias y clases en Kotlin 🚀
+En este laboratorio vamos a trabajar con variables, referencias y clases en Kotlin.
+Os proponemos dos retos, uno para trabajar con referencias y otro para trabajar con cálculos aritméticos.
+
+## Tabla de contenidos 📚
+
+- [Reto Labo 02: Variables, referencias y clases en Kotlin 🚀](#reto-labo-02-variables-referencias-y-clases-en-kotlin-)
+- [Objetivos 🎯](#objetivos-)
+- [Actividades 📝](#actividades-)
+
+
+### Nota 📌:
+
+Este laboratorio está basado en los de la asignatura ***Programación*** del **[Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación](https://www.etsit.upm.es/estudios/grado-en-ingenieria-de-tecnologias-y-servicios-de-telecomunicacion.html)** de la **[Universidad Politécnica de Madrid](www.upm.es)**, donde fui profesor colaborador y cuyo coordinador es Juan Carlos Dueñas.
+
+Los ejercicios se han adaptado a Kotlin y a la programación en Android Studio.
+
+
 # Objetivos 🎯
 
 1. Repasar el uso de variables y aprender a manejar referencias en Kotlin.
 2. Crear funciones sencillas, tanto con la ayuda de Android Studio como a mano.
 3. Repasar las clases predefinidas e introducir algunas clases nuevas.
 
-### Nota:
 
-Este laboratorio está basado en los de la asignatura **_Programación_** del [**Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación**](https://www.etsit.upm.es/estudios/grado-en-ingenieria-de-tecnologias-y-servicios-de-telecomunicacion.html) de la [**Universidad Politécnica de Madrid**](www.upm.es), donde fui profesor colaborador y cuyo coordinador es Juan Carlos Dueñas. 
-
-Los ejercicios se han adaptado a Kotlin y a la programación en Android Studio.
-
-## Antes de la sesión de laboratorio
+## Antes de la sesión de laboratorio 🧪
 
 En cada sesión de laboratorio, para resolver las actividades que se plantean deberá seguir los siguientes pasos:
 
 1. Leer bien el enunciado varias veces hasta comprender cuál es el problema que tiene que resolver. Este paso se llama *Análisis*. Lo puede hacer antes de la sesión.
-2. Piense cómo lo va a resolver: qué clases, operaciones y datos necesita. Para ello, lo más fácil es ayudarse de papel y lápiz, sin usar el ordenador. Este paso se llama *Diseño*. Para cada clase deberá identificar: el número mínimo de atributos necesarios, el constructor con sus parámetros, los métodos que va a usar - en cada uno debe identificar primero los parámetros que necesitan y qué resultado devolverán. También se puede hacer antes de la sesión del laboratorio.
-3. *Programe* el código Kotlin en Android Studio, consultando la documentación que se le proporcione, y haga los cambios necesarios hasta que compile correctamente y pueda ejecutar. Si ha hecho los pasos 1 y 2, este lo puede hacer rápidamente en el laboratorio.
+2. Piense cómo lo va a resolver: qué clases, operaciones y datos necesita. Para ello, lo más fácil es ayudarse de papel y lápiz, sin usar el ordenador. Este paso se llama *Diseño* ✏️. Para cada clase deberá identificar: el número mínimo de atributos necesarios, el constructor con sus parámetros, los métodos que va a usar - en cada uno debe identificar primero los parámetros que necesitan y qué resultado devolverán. También se puede hacer antes de la sesión del laboratorio.
+3. *Programe* el código Kotlin en Android Studio ⚡, consultando la documentación que se le proporcione, y haga los cambios necesarios hasta que compile correctamente y pueda ejecutar. Si ha hecho los pasos 1 y 2, este lo puede hacer rápidamente en el laboratorio.
 4. Compruebe que la clase funciona bien (*pruebas*), para lo que puede incluir un método `main` en el que se crean objetos de la clase y se llama a sus métodos con diferentes parámetros, mostrando en la pantalla los resultados o comparándolos con los resultados esperados (que debe haber calculado a mano). También debe hacerlo en el laboratorio, o después.
 
 Revise el siguiente enlace, contiene documentación sobre las clases predefinidas, puede ser muy útil:
@@ -29,10 +42,8 @@ Busque paquete [`kotlin.math`](https://kotlinlang.org/api/latest/jvm/stdlib/kotl
 
 # Actividades 📝
 
-1. **Creación de un proyecto llamado `retoLabo02`**
-
-- Cree un proyecto en Android Studio llamado `retoLabo02` y añada un paquete llamado `es.uva.sg.psm.retoLabo2`.
-- Cree una **empty activity**  
+- Cree un proyecto en Android Studio llamado `RetoLabo02` y añada un paquete llamado `es.uva.sg.psm.retolabo02`.
+- Cree una **empty activity** 📂
 - Cree un fichero llamado `pruebaSeries` y una función llamada `main` que se encargue de llamar a las funciones que se describen en los retos.
 
 ## Reto 1: Comparar objetos y comparar referencias 🔍
@@ -41,16 +52,12 @@ Las referencias permiten manejar objetos. En la teoría ya habrá visto en la as
 
 El reto consiste en adivinar el resultado de unas operaciones que comparan objetos y referencias antes de ejecutar el programa.
 
-<div align="center">
-    <img src="imgReto/image4.png" alt="Lisa Simpson">
-</div>
-
-### Pasos
+### Pasos 🛠️
 
 1. Cree una clase que se llame `CapituloSerie`, donde cada objeto será un episodio de una temporada de una serie. Por ejemplo, el primer capítulo de la temporada décima de **"Los Simpsons"**. Puede crearlo en el mismo fichero `pruebaSeries` o en otro fichero como hacíamos en Java.
 
 2. Defina estos tres atributos en la clase:
-   
+
    ```kotlin
    class CapituloSerie(
        var serie: String,
@@ -59,30 +66,20 @@ El reto consiste en adivinar el resultado de unas operaciones que comparan objet
    )
    ```
 
-<div align="center">
-    <img src="imgReto/image7.jpg" alt="Winter is coming">
-</div>
-
-3. Otro ejemplo de método que puede crear automáticamente es `toString()`, que sirve para obtener un `String` con los valores de los atributos de un objeto, que luego puede imprimir. 
-   
+3) Otro ejemplo de método que puede crear automáticamente es `toString()`, que sirve para obtener un `String` con los valores de los atributos de un objeto, que luego puede imprimir.
    1. Coloca el cursor dentro de la clase, entre las llaves `{}`.
    2. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS) o en el menú superior seleccionando "Code" y luego "Generate".
    3. Selecciona "toString()".
    4. Selecciona los atributos que quieres mostrar (en este caso, serie, temporada y episodio).
    5. Android Studio generará automáticamente el método `toString()` basado en los atributos seleccionados.
 
-<div align="center">
-    <img src="imgReto/image3.png" alt="Homer Simpson">
-</div>
-
 4. Cree un método para comparar objetos (no referencias) generando los métodos `equals()` y `hashCode()`.
-
    1. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS).
    2. Selecciona "equals() y hashCode()".
    3. Selecciona los atributos relevantes (serie, temporada y episodio).
    4. Android Studio generará el código para los métodos `equals()` y `hashCode()`.
 
-### Añade la función `main()`
+### Añade la función `main()` 💻
 
 Antes de ejecutarlo, apunte lo que cree que va a aparecer en la pantalla cuando se llame a `println` las 18 veces.
 
@@ -123,25 +120,13 @@ fun main() {
 
 4. Ejecute el programa y compare el resultado con lo que había previsto. ¿Cuántas ha acertado?
 
-<div align="center">
-    <img src="imgReto/image6.png" alt="Bart Simpson">
-</div>
-
 ## Reto 2: Hacer cálculos aritméticos - Angry Birds 🐦
-
-<div align="center">
-    <img src="imgReto/image2.jpg" alt="Angrybird">
-</div>
 
 El reto consiste en saber cuánto tiempo durará el vuelo de un Angry Bird, la altura máxima que alcanzará y a qué distancia impactará contra un cerdito, si lo lanzamos con una determinada velocidad inicial y ángulo.
 
 Es un claro caso de trayectoria parabólica. Lo lanzamos con altura inicial 0 (desde el suelo), en vacío (sin rozamiento del aire), y el cerdito está también en el suelo.
 
-<div align="center">
-    <img src="imgReto/image1.jpg" alt="Trayectoria Parabólica">
-</div>
-
-### Reto 2.1: Añadir atributos, toString
+### Reto 2.1: Añadir atributos, toString 📝
 
 En el fichero `AngryBird.kt` debe repetir las operaciones que ha hecho en `CapituloSerie`, usando ahora estos atributos (aparte de la constante `g` que ya está definida):
 
@@ -153,56 +138,56 @@ private var angulo: Double // ángulo sobre la superficie en radianes
 
 Cree el método `toString()` utilizando los menús de Android Studio para generarlos.
 
-### Reto 2.2: Calcular la duración del vuelo
+### Reto 2.2: Calcular la duración del vuelo 🕒
 
 La velocidad inicial de lanzamiento `(v)` tiene una componente horizontal `(vx)` y otra vertical `(vy)`:
 
+```math
+v^2 = v_x^2 + v_y^2 \\
+v_x = v \cdot \cos(\text{ángulo}) \\
+v_y = v \cdot \sin(\text{ángulo})
 ```
-v² = vx² + vy²
-vx = v * cos(angulo)
-vy = v * sin(angulo)
-```
+
 
 Para calcular el tiempo que se tarda en alcanzar la altura máxima se usa la ecuación de la aceleración constante:
 
-```
-vy = vy0 - g * t
-```
+```math
+v_y = v_{y0} - g \cdot t
+```	    
 
 Aplicándola a la componente vertical de la velocidad inicial, obtenemos el tiempo que se tarda en alcanzar la altura máxima:
 
-```
-thmax = vy / g
+```math
+t_{hmax} = \frac{v_y}{g}
+
 ```
 
 El tiempo total de vuelo es dos veces el tiempo para alcanzar la altura máxima:
 
-```
-tv = 2 * thmax
+```math
+t_v = 2 \cdot t_{hmax}
 ```
 
 Escriba un método `getTiempo()` que devuelva el tiempo total de vuelo usando `this.v` y `this.angulo`.
 
-### Reto 2.3: Calcular la altura máxima alcanzada
+### Reto 2.3: Calcular la altura máxima alcanzada 📏
 
 Para calcular la altura máxima alcanzada se usa la ecuación de la aceleración constante:
 
-```kotlin
-h = vy² / (2 * g)
+```math
+h = \frac{v_y^2}{2 \cdot g}
+
 ```
 
 Escriba el método `getAltura()` que devuelva la altura máxima.
 
-### Reto 2.4: Calcular la distancia al punto de impacto
-
-<div align="center">
-    <img src="imgReto/image5.jpg" alt="Angry Bird">
-</div>
+### Reto 2.4: Calcular la distancia al punto de impacto 📍
 
 Para calcular la distancia hasta el punto de impacto se usa la ecuación:
 
-```
-d = vx * tv
+```math
+d = v_x \cdot t_v
+
 ```
 
 Escriba el método `getDistancia()` que devuelva la distancia al impacto usando `this.v` y `this.angulo`.
@@ -232,4 +217,5 @@ fun main() {
 }
 ```
 
-## ¿Obtienes los resultados correctos? ¿Cómo podrías probarlo?
+## ¿Obtienes los resultados correctos? ¿Cómo podrías probarlo? 🤔
+
