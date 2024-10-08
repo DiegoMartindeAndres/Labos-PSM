@@ -143,18 +143,21 @@ Cree el método `toString()` utilizando los menús de Android Studio para genera
 La velocidad inicial de lanzamiento `(v)` tiene una componente horizontal `(vx)` y otra vertical `(vy)`:
 
 ```math
-v^2 = v_x^2 + v_y^2 \\
-\quad \\
+v^2 = v_x^2 + v_y^2 
 ```
+
+<br>
+
 ```math
-v_x = v \cdot \cos(\text{ángulo}) \\
-\quad \\
+v_x = v \cdot \cos(\text{ángulo}) 
 ```
+
+<br>
+
 ```math
 v_y = v \cdot \sin(\text{ángulo})
-
 ```
-
+<br>
 
 Para calcular el tiempo que se tarda en alcanzar la altura máxima se usa la ecuación de la aceleración constante:
 
