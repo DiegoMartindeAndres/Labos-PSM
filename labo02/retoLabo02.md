@@ -144,8 +144,11 @@ La velocidad inicial de lanzamiento `(v)` tiene una componente horizontal `(vx)`
 
 ```math
 v^2 = v_x^2 + v_y^2 \\
+\quad \\
 v_x = v \cdot \cos(\text{ángulo}) \\
+\quad \\
 v_y = v \cdot \sin(\text{ángulo})
+
 ```
 
 
