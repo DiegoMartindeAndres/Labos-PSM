@@ -164,6 +164,8 @@ Para calcular el tiempo que se tarda en alcanzar la altura máxima se usa la ecu
 ```math
 v_y = v_{y0} - g \cdot t
 ```	    
+<br>
+
 
 Aplicándola a la componente vertical de la velocidad inicial, obtenemos el tiempo que se tarda en alcanzar la altura máxima:
 
@@ -171,12 +173,14 @@ Aplicándola a la componente vertical de la velocidad inicial, obtenemos el tiem
 t_{hmax} = \frac{v_y}{g}
 
 ```
+<br>
 
 El tiempo total de vuelo es dos veces el tiempo para alcanzar la altura máxima:
 
 ```math
 t_v = 2 \cdot t_{hmax}
 ```
+<br>
 
 Escriba un método `getTiempo()` que devuelva el tiempo total de vuelo usando `this.v` y `this.angulo`.
 
@@ -188,6 +192,7 @@ Para calcular la altura máxima alcanzada se usa la ecuación de la aceleración
 h = \frac{v_y^2}{2 \cdot g}
 
 ```
+<br>
 
 Escriba el método `getAltura()` que devuelva la altura máxima.
 
@@ -199,6 +204,7 @@ Para calcular la distancia hasta el punto de impacto se usa la ecuación:
 d = v_x \cdot t_v
 
 ```
+<br>
 
 Escriba el método `getDistancia()` que devuelva la distancia al impacto usando `this.v` y `this.angulo`.
 
