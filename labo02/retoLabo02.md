@@ -42,21 +42,17 @@ Busque paquete [`kotlin.math`](https://kotlinlang.org/api/latest/jvm/stdlib/kotl
 
 # Actividades 📝
 
+### Modificadores y manejo de valores nulos en Kotlin
+
+### Creación proyecto `RetoLabo02`
+
 - Cree un proyecto en Android Studio llamado `RetoLabo02` y añada un paquete llamado `es.uva.sg.psm.retolabo02`.
 - Cree una **empty activity** 📂
 - Cree un fichero llamado `pruebaSeries` y una función llamada `main` que se encargue de llamar a las funciones que se describen en los retos.
 
 ## Reto 1: Comparar objetos y comparar referencias 🔍
 
-Las referencias permiten manejar objetos. En la teoría ya habrá visto en la asignatura **"Programación orientada a objetos"** que no es lo mismo comparar referencias (son iguales si apuntan al mismo objeto) que comparar objetos (son iguales si los valores de los atributos son iguales).
-
-El reto consiste en adivinar el resultado de unas operaciones que comparan objetos y referencias antes de ejecutar el programa.
-
-### Pasos 🛠️
-
-1. Cree una clase que se llame `CapituloSerie`, donde cada objeto será un episodio de una temporada de una serie. Por ejemplo, el primer capítulo de la temporada décima de **"Los Simpsons"**. Puede crearlo en el mismo fichero `pruebaSeries` o en otro fichero como hacíamos en Java.
-
-2. Defina estos tres atributos en la clase:
+1. Cree una clase `CapituloSerie`:
 
    ```kotlin
    class CapituloSerie(
@@ -66,59 +62,90 @@ El reto consiste en adivinar el resultado de unas operaciones que comparan objet
    )
    ```
 
-3) Otro ejemplo de método que puede crear automáticamente es `toString()`, que sirve para obtener un `String` con los valores de los atributos de un objeto, que luego puede imprimir.
-   1. Coloca el cursor dentro de la clase, entre las llaves `{}`.
-   2. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS) o en el menú superior seleccionando "Code" y luego "Generate".
-   3. Selecciona "toString()".
-   4. Selecciona los atributos que quieres mostrar (en este caso, serie, temporada y episodio).
-   5. Android Studio generará automáticamente el método `toString()` basado en los atributos seleccionados.
+2. Operador Elvis (`?:`)
+El operador Elvis (`?:`) es útil cuando necesitas asignar un valor por defecto a una variable en caso de que su valor sea `null`. Esto evita errores de ejecución por intentar acceder a valores nulos.
 
-4. Cree un método para comparar objetos (no referencias) generando los métodos `equals()` y `hashCode()`.
-   1. Abre el menú de generación con Alt + Insert (o Cmd + N en macOS).
-   2. Selecciona "equals() y hashCode()".
-   3. Selecciona los atributos relevantes (serie, temporada y episodio).
-   4. Android Studio generará el código para los métodos `equals()` y `hashCode()`.
-
-### Añade la función `main()` 💻
-
-Antes de ejecutarlo, apunte lo que cree que va a aparecer en la pantalla cuando se llame a `println` las 18 veces.
+Ejemplo:
 
 ```kotlin
-fun main() {
-    val p1 = CapituloSerie("Los Simpson", 1, 10)
-    val p2 = CapituloSerie("Juego de Tronos", 1, 5)
-    val p3 = p2
+var nombre: String? = null
+val nombreSeguro: String = nombre ?: "Valor por defecto"
+println(nombreSeguro)  // Imprime: Valor por defecto
+```
 
-    println("p1 antes = $p1")
-    println("p2 antes = $p2")
-    println("p3 antes = $p3")
+3. Tipos anulables (`?`)
+Kotlin permite que una variable sea anulable agregando `?` al tipo. Esto significa que la variable puede contener un valor `null`, pero cualquier acceso debe manejarse de forma segura.
 
-    println("p1 y p2 son el mismo objeto = ${p1 === p2}")
-    println("p1 y p2 son objetos iguales = ${p1 == p2}")
-    println("p1 y p3 son el mismo objeto = ${p1 === p3}")
-    println("p1 y p3 son objetos iguales = ${p1 == p3}")
-    println("p3 y p2 son el mismo objeto = ${p3 === p2}")
-    println("p3 y p2 son objetos iguales = ${p3 == p2}")
+Ejemplo:
 
-    var p1Mutable = p1
-    var p2Mutable: CapituloSerie? = p2
-    p1Mutable = p2Mutable!!  // Aseguramos que p2Mutable no es nulo en este momento
-    p2Mutable = null
-
-    println("p1 después = $p1Mutable")
-    println("p2 después = $p2Mutable")
-    println("p3 después = $p3")
-
-    println("p1 y p2 son el mismo objeto = ${p1Mutable === p2Mutable}")
-    println("p1 y p2 son objetos iguales = ${p1Mutable == p2Mutable}")
-    println("p1 y p3 son el mismo objeto = ${p1Mutable === p3}")
-    println("p1 y p3 son objetos iguales = ${p1Mutable == p3}")
-    println("p3 y p2 son el mismo objeto = ${p3 === p2Mutable}")
-    println("p3 y p2 son objetos iguales = ${p3 == p2Mutable}")
+```kotlin
+var capitulo: CapituloSerie? = null  // Variable puede ser nula
+capitulo?.let {
+    println(it.serie)  // Esto solo se ejecuta si capitulo no es null
 }
 ```
 
-4. Ejecute el programa y compare el resultado con lo que había previsto. ¿Cuántas ha acertado?
+4. Forzar valores nulos con el operador de aserción de no nulo (`!!`)
+El operador `!!` fuerza a Kotlin a tratar una variable anulable como no nula. Si el valor es realmente `null`, se lanza una excepción `NullPointerException`.
+
+Ejemplo:
+
+```kotlin
+var serieNullable: CapituloSerie? = null
+val serieNoNullable: CapituloSerie = serieNullable!!  // Lanza una NullPointerException si es null
+```
+
+5. Generación de advertencias y excepciones
+Cuando no se usa `!!` para forzar el valor no nulo, Kotlin emite advertencias al compilar para recordarte que podrías estar tratando con un valor nulo. Sin embargo, al usar `!!`, el programa puede lanzar una excepción si el valor es efectivamente `null`.
+
+
+6. Cree una función `main` que pruebe el manejo de valores nulos, el operador Elvis y forzar valores `null` con `!!`.
+
+   ```kotlin
+   fun main() {
+       val p1 = CapituloSerie("Los Simpson", 1, 10)
+       val p2 = CapituloSerie("Juego de Tronos", 1, 5)
+       val p3 = p2
+
+       println("p1 antes = $p1")
+       println("p2 antes = $p2")
+       println("p3 antes = $p3")
+
+       // Comparar objetos y referencias
+       println("p1 y p2 son el mismo objeto = ${p1 === p2}")
+       println("p1 y p2 son objetos iguales = ${p1 == p2}")
+       println("p1 y p3 son el mismo objeto = ${p1 === p3}")
+       println("p1 y p3 son objetos iguales = ${p1 == p3}")
+       println("p3 y p2 son el mismo objeto = ${p3 === p2}")
+       println("p3 y p2 son objetos iguales = ${p3 == p2}")
+
+       // Manejo de nullable types
+       var p1Mutable = p1
+       var p2Nullable: CapituloSerie? = p2
+
+       // Usamos Elvis para manejar null
+       val resultado = p2Nullable ?: CapituloSerie("Desconocido", 0, 0)
+       println("Resultado con operador Elvis: $resultado")
+
+       // Forzar valores nulos
+       p1Mutable = p2Nullable!!  // Aseguramos que no es nulo aquí
+       p2Nullable = null  // Ahora sí es null
+
+       try {
+           p1Mutable = p2Nullable!!  // Esto lanzará NullPointerException
+       } catch (e: NullPointerException) {
+           println("Excepción capturada: ${e.message}")
+       }
+
+       // Resultado final
+       println("p1 después = $p1Mutable")
+       println("p2 después = $p2Nullable")
+       println("p3 después = $p3")
+   }
+   ```
+
+
+7. Ejecute el programa y compare el resultado con lo que había previsto. ¿Cuántas ha acertado?
 
 ## Reto 2: Hacer cálculos aritméticos - Angry Birds 🐦
 
