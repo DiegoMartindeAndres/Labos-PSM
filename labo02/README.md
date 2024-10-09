@@ -172,6 +172,8 @@ println("Piedra, Papel o Tijeras: Ingrese su elección")
 playerChoice = readln() ?: ""
 ```
 
+---
+
 # ¿Pero qué es `?:`?
 
 Es el operador **Elvis**. Si, si, como el rey del rock. 🕺
@@ -249,60 +251,6 @@ El operador Elvis es muy útil cuando trabajas con variables que pueden ser `nul
 ## Resumen
 
 El operador Elvis (`?:`) en Kotlin es una forma simple y elegante de manejar valores nulos. Te permite proporcionar valores predeterminados para evitar errores comunes como las excepciones `NullPointerException`, haciendo que tu código sea más seguro y legible.
-
-
-
-## Paso 4: Elección aleatoria de la computadora 🎲
-
-Generamos una elección aleatoria para la computadora usando números aleatorios.
-
-``` Kotlin
-val randomNumber = (1..3).random()
-
-if (randomNumber == 1) {
-    computerChoice = "piedra"
-} else if (randomNumber == 2) {
-    computerChoice = "papel"
-} else {
-    computerChoice = "tijeras"
-}
-
-println("Elección de la computadora: $computerChoice")
-```
-
-### Reto:
-¿Serías capaz de hacerlo con una sentencia `when`?
-
-## Paso 5: Lógica de comparación ⚔️
-
-Compara la elección del jugador con la de la computadora para determinar el resultado.
-
-### Reto 
-¿Serías capaz de hacer el código tu solo?
-
-### Solución
-<details>
-  <summary>Haz clic para ver el código</summary>
-
-
-Espero que no hayas sido un gallina 🐔
-y lo hayas intentado por ti mismo. Aquí tienes la solución:
-
-
-``` Kotlin
-if (playerChoice == computerChoice) {
-    println("Es un empate!")
-} else if ((playerChoice == "piedra" && computerChoice == "tijeras") ||
-           (playerChoice == "papel" && computerChoice == "piedra") ||
-           (playerChoice == "tijeras" && computerChoice == "papel")) {
-    println("¡Ganaste!")
-} else {
-    println("La computadora gana.")
-}
-```
-</details>
-
----
 
 ### Otros modificadores de Variables en Kotlin
 
@@ -421,6 +369,62 @@ variablePosiblementeNula?.let {
 
 ### Resumen:
 El operador `!!` fuerza a Kotlin a tratar una variable como no nula, pero si esa variable es `null` en tiempo de ejecución, se lanzará una `NullPointerException`. Es una herramienta poderosa, pero debes usarla con cuidado para evitar errores inesperados.
+
+---
+
+## Paso 4: Elección aleatoria de la computadora 🎲
+
+Generamos una elección aleatoria para la computadora usando números aleatorios.
+
+``` Kotlin
+val randomNumber = (1..3).random()
+
+if (randomNumber == 1) {
+    computerChoice = "piedra"
+} else if (randomNumber == 2) {
+    computerChoice = "papel"
+} else {
+    computerChoice = "tijeras"
+}
+
+println("Elección de la computadora: $computerChoice")
+```
+
+### Reto:
+¿Serías capaz de hacerlo con una sentencia `when`?
+
+## Paso 5: Lógica de comparación ⚔️
+
+Compara la elección del jugador con la de la computadora para determinar el resultado.
+
+### Reto 
+¿Serías capaz de hacer el código tu solo?
+
+### Solución
+<details>
+  <summary>Haz clic para ver el código</summary>
+
+
+Espero que no hayas sido un gallina 🐔
+y lo hayas intentado por ti mismo. Aquí tienes la solución:
+
+
+``` Kotlin
+if (playerChoice == computerChoice) {
+    println("Es un empate!")
+} else if ((playerChoice == "piedra" && computerChoice == "tijeras") ||
+           (playerChoice == "papel" && computerChoice == "piedra") ||
+           (playerChoice == "tijeras" && computerChoice == "papel")) {
+    println("¡Ganaste!")
+} else {
+    println("La computadora gana.")
+}
+```
+</details>
+
+---
+
+
 
  # Continuando con la aplicación de Piedra, Papel o Tijeras 🚽 📄 ✂️
 
