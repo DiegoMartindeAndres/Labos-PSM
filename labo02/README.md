@@ -204,6 +204,16 @@ val nombreDefinitivo = nombre ?: "Desconocido"
 println(nombreDefinitivo) // Imprime "Desconocido"
 ```
 
+OJO! Si te fijas en la declaración de la variable `nombre`, tiene un signo de interrogación (`?`) al final. Esto indica que `nombre` puede ser `null`. De otra manera, Kotlin lanzaría un error de compilación.
+
+Prueba con el siguiente código:
+
+``` Kotlin
+val nombre: String = null
+val nombreDefinitivo = nombre ?: "Desconocido"
+println(nombreDefinitivo) // Imprime "Desconocido"
+```
+
 En este ejemplo, como `nombre` es `null`, el operador Elvis asigna `"Desconocido"` a `nombreDefinitivo`.
 
 ### Ejemplo con `readLine()`
@@ -293,6 +303,124 @@ if (playerChoice == computerChoice) {
 </details>
 
 ---
+
+### Otros modificadores de Variables en Kotlin
+
+En Kotlin, existen varios modificadores que se pueden aplicar a las variables para controlar su comportamiento y características. A continuación, se explican algunos de los más importantes:
+
+1. **Nullable Types (`?`)** 🤔
+   - Para que una variable pueda contener `null`, debes añadir un signo de interrogación (`?`) al tipo de la variable. Esto le permite aceptar valores `null`, lo cual no es permitido por defecto en Kotlin.
+
+   Ejemplo:
+
+   ```kotlin
+   val nombreAnulable: String? = null  // Esta variable puede ser null
+   ```
+
+2. **`lateinit`** ⏳
+   - Este modificador se utiliza para declarar variables mutables (`var`) que se inicializarán más tarde. Solo se puede usar con tipos no anulables. Es útil cuando no puedes inicializar la variable inmediatamente, pero garantizas que lo harás antes de usarla.
+
+   Ejemplo:
+
+   ```kotlin
+   lateinit var apellido: String
+
+   fun inicializar() {
+       apellido = "Martín"
+   }
+   ```
+
+3. **`val` vs `var`** 🔄
+   - **`val`**: Indica que la variable es inmutable. Una vez asignado un valor, no puede cambiarse.
+   - **`var`**: Indica que la variable es mutable, lo que significa que su valor puede cambiar.
+
+   Ejemplo:
+
+   ```kotlin
+   val nombreFijo: String = "Enrique"  // No se puede cambiar
+   var nombreCambiante: String = "Bea"  // Se puede cambiar
+   nombreCambiante = "Isma"
+   ```
+
+4. **`const`** 📐
+   - El modificador `const` se utiliza para definir **constantes de tiempo de compilación**. Solo se puede usar con variables de nivel superior o propiedades de objetos (`object`). Siempre debe ser un `val`.
+
+   Ejemplo:
+
+   ```kotlin
+   const val PI = 3.14159
+   ```
+
+5. **`by lazy`** 💤
+   - `by lazy` se utiliza para inicialización perezosa. Esto significa que la variable se inicializa solo cuando es accedida por primera vez. Solo se puede usar con variables inmutables (`val`).
+
+   Ejemplo:
+
+   ```kotlin
+   val valorPerezoso by lazy {
+       "Este valor se genera al acceder"
+   }
+   ```
+
+6. **`vararg`** ➕
+   - `vararg` permite que una función reciba un número variable de argumentos del mismo tipo.
+
+   Ejemplo:
+
+   ```kotlin
+   fun sumar(vararg numeros: Int): Int {
+       return numeros.sum()
+   }
+   ```
+
+7. **`data class`** 📝
+   - Aunque no es un modificador de variables, las **clases de datos** (`data class`) en Kotlin generan automáticamente métodos como `copy()`, `toString()`, `equals()`, y otros para simplificar el manejo de clases con datos.
+
+   Ejemplo:
+
+   ```kotlin
+   data class Persona(val nombre: String, val edad: Int)
+   ```
+
+8. **Operador de Aserción de No Nulo (`!!`) en Kotlin**
+
+- En Kotlin, el operador `!!` se llama **operador de aserción de no nulo** ("non-null assertion operator"). Este operador indica al compilador que confíes en que una variable anulable **no es `null`** en ese momento, y que puedes tratarla como una variable no anulable.
+
+- Cuando usas `!!`, le estás diciendo al compilador: "Estoy seguro de que esta variable no es `null`, así que deja de advertirme sobre su posible nulabilidad". Si el valor resulta ser `null`, Kotlin lanzará una excepción `NullPointerException` (NPE) en tiempo de ejecución.
+
+### Ejemplo:
+
+   ```kotlin
+   val variableNoNula: String = variablePosiblementeNula!!
+   ```
+
+- `variablePosiblementeNula` es de un tipo anulable (`String?`), lo que significa que podría contener `null`.
+- Al usar `variablePosiblementeNula!!`, estás diciendo: "Confío en que `variablePosiblementeNula` **no es `null`**, así que lo trato como un `String` no anulable".
+
+- Si `variablePosiblementeNula` fuera `null` en este momento, se lanzaría una excepción.
+
+### Uso recomendado
+
+- Es importante usar `!!` con cautela, porque si no estás completamente seguro de que el valor no es `null`, puedes acabar con una excepción `NullPointerException`, algo que Kotlin intenta evitar de forma nativa. En la mayoría de los casos, es preferible manejar la nulabilidad de forma segura con el operador **Elvis** (`?:`), el operador **safe call** (`?.`), o una comprobación explícita de `null`.
+
+### Ejemplo usando alternativas seguras:
+
+- Usando el operador **Elvis**:
+
+```kotlin
+val variableNoNula: String = variablePosiblementeNula ?: "Valor por defecto"
+```
+
+- Usando el operador **safe call**:
+
+```kotlin
+variablePosiblementeNula?.let {
+    // Esto se ejecuta solo si variablePosiblementeNula no es null
+}
+```
+
+### Resumen:
+El operador `!!` fuerza a Kotlin a tratar una variable como no nula, pero si esa variable es `null` en tiempo de ejecución, se lanzará una `NullPointerException`. Es una herramienta poderosa, pero debes usarla con cuidado para evitar errores inesperados.
 
  # Continuando con la aplicación de Piedra, Papel o Tijeras 🚽 📄 ✂️
 
