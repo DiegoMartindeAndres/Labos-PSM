@@ -1,4 +1,4 @@
-# Laboratorio 3: Creación y uso de clases 💻
+# Laboratorio 3: Creación, uso de clases y funciones 💻
 
 ## **Objetivos** 🎯
 
