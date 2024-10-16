@@ -19,7 +19,7 @@ Conviene acostumbrarse a manejar la documentación de las clases (API) de Java q
 
 Busque paquete [`kotlin.math`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/) y localice la descripción de sus atributos y los métodos logarítmicos y exponenciales.
 
-También puede crear un proyecto **Labo03** si no lo tiene creado de antes. Cree un fihcero llamado `RetoLabo03` 
+También puede crear un proyecto `Labo03` si no lo tiene creado de antes.
 
 ## **Actividades** 🚀
 
@@ -35,9 +35,10 @@ Todas las sustancias radiactivas siguen un proceso de desintegración de acuerdo
 Para cada sustancia radiactiva hay un intervalo fijo, denominado *semivida* y representado por el símbolo *t*<sub>*1/2*</sub>, en el que el número de átomos que había al comienzo se ha reducido a la mitad. Si en la ecuación anterior hacemos N = N<sub>0</sub> / 2
 , tenemos que:
 
-<div style="text-align: center;">
-t<sub>1/2</sub> = <sup>(ln 2)</sup> / <sub>λ</sub>
-</div>
+```math
+t_{1/2} = \frac{\ln 2}{\lambda}
+```
+
 <br>
 <br>
 

@@ -759,6 +759,3 @@ Estas colecciones especializadas en Kotlin nos permiten elegir la estructura ade
 - **LinkedHashSet** para conjuntos únicos con un orden de inserción.
 
 Elegir la colección adecuada nos ayuda a escribir un código más eficiente y fácil de mantener. ¡Prueba cada una para ver cuál se adapta mejor a tus necesidades!
-
-
-[comment]: <> (Falta del 69 en adelante.)

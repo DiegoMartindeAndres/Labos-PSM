@@ -9,12 +9,13 @@ El sistema bancario tiene las siguientes características:
 - El **🏦 Banco** tiene clientes (personas) y gestiona las cuentas de estos. Además, el banco tiene métodos para ➕ agregar clientes, crear cuentas y 🔍 buscar cuentas por su identificador.
 - Cada **💸 Transacción** tiene un tipo (depósito o retiro), un monto y una 📅 fecha.
 
-A continuación se presenta un diagrama UML en Mermaid para ilustrar las relaciones entre las clases.
+A continuación se presenta un diagrama de clases en UML para ilustrar las clases, sus atributos y las relaciones entre las clases.
+
 
 ```mermaid
 classDiagram
     class Banco {
-        +Map~Persona, Set~Cuenta~~ cuentasPorPersona
+        +Map &#60; Persona, Set &#60; Cuenta &#62; &#62; cuentasPorPersona
         +Map~String, Cuenta~ cuentasPorId
         +agregarPersona(Persona persona)
         +agregarCuenta(Persona persona, Cuenta cuenta)
