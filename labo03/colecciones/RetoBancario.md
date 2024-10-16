@@ -1,13 +1,13 @@
 # 🏦 Ejercicio: Sistema Bancario con Kotlin usando Colecciones
 
-Este ejercicio tiene como objetivo que los 👨‍🎓 estudiantes de tercer año de Ingeniería Informática practiquen el uso de colecciones en Kotlin (listas mutables, conjuntos mutables y mapas) mediante la creación de un sistema bancario básico. El problema abarca clases como "👤 Persona", "💰 Cuenta", "💸 Transacción" y "🏦 Banco" para entender cómo gestionar la relación entre personas, cuentas bancarias y transacciones.
+Este ejercicio tiene como objetivo que los 👨‍🎓 estudiantes de tercer año de Ingeniería Informática practiquen el uso de colecciones en Kotlin (listas mutables, conjuntos mutables y mapas) mediante la creación de un sistema bancario básico. El problema abarca clases como **👤 Persona**, **💰 Cuenta**, **💸 Transacción** y **🏦 Banco** para entender cómo gestionar la relación entre personas, cuentas bancarias y transacciones.
 
 ## 📖 Descripción del Problema
 El sistema bancario tiene las siguientes características:
 - Una **👤 Persona** puede tener múltiples 💰 cuentas bancarias y cada cuenta puede pertenecer a varias personas (en caso de cuentas compartidas).
 - Una **💰 Cuenta** tiene un identificador, una lista ordenada de **💸 Transacciones**, y se gestiona mediante el 🏦 banco.
 - El **🏦 Banco** tiene clientes (personas) y gestiona las cuentas de estos. Además, el banco tiene métodos para ➕ agregar clientes, crear cuentas y 🔍 buscar cuentas por su identificador.
-- Cada **💸 Transacción** tiene un tipo (depósito o retiro), un monto y una 📅 fecha.
+- Cada **💸 Transacción** tiene un tipo (depósito o retiro), una cantidad y una 📅 fecha.
 
 A continuación se presenta un diagrama de clases en UML para ilustrar las clases, sus atributos y las relaciones entre las clases.
 
@@ -40,7 +40,7 @@ classDiagram
 
     class Transaccion {
         +String tipo
-        +Double monto
+        +Double cantidad
         +String fecha
     }
 
@@ -77,7 +77,7 @@ classDiagram
 | **Attributes** |
 | -------------------------------------------------------------------- |
 | `tipo: String` <br> Tipo de transacción (e.g., "depósito" o "retiro"). |
-| `monto: Double` <br> 💵 Monto de la transacción. |
+| `cantidad: Double` <br> 💵 Cantidad de la transacción. |
 | `fecha: String` <br> 📅 Fecha en la que se realiza la transacción. |
 
 ## 🎯 Objetivos del Ejercicio
