@@ -15,7 +15,7 @@ A continuación se presenta un diagrama de clases en UML para ilustrar las clase
 ```mermaid
 classDiagram
     class Banco {
-        +Map &#60; Persona, Set &#60; Cuenta &#62; &#62; cuentasPorPersona
+        +Map < Persona, Set < Cuenta > > cuentasPorPersona
         +Map~String, Cuenta~ cuentasPorId
         +agregarPersona(Persona persona)
         +agregarCuenta(Persona persona, Cuenta cuenta)
