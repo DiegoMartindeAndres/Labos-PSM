@@ -118,10 +118,11 @@ Vamos a crear una nueva función llamada `trickOrTreat` que devuelva una funció
 ```kotlin
 fun trickOrTreat(esTruco: Boolean): () -> Unit {
     if (esTruco) {
-        return trick 
-    } else { 
-        return treat
-        }
+        return trick
+    } else {
+       treat(8)
+       return {}  // Encapsulamos la llamada a treat dentro de un lambda que devuelve Unit
+    }
 }
 ```
 
