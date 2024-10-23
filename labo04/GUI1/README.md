@@ -845,8 +845,9 @@ Te darás cuenta que el menú no se despliega en la vista de preview. ¿Has prob
 
 Efectivamente, no se ve nada. Eso es debido a que todavía no tenemos nada probramado en los eventos `onClick` de los botones. Eso lo haremos en el siguiente laboratorio, de momento solo hemos visto parte de la vista, pero más adelante vamos a ver el modelo y la lógica de la aplicación.
 
+## 🔧 Solución
 
-Enhorabuena! Si has llegado hasta aquí tendrás tu primera vista realizada en Jetpack Compose. Tu vista tendría que tener una pinta parecida a esta. Pero, por favor, solo mira el código si te has atascado, intenta hacerlo por ti mismo.
+🎉 ¡Enhorabuena! Si has llegado hasta aquí, ya tienes tu primera vista realizada en **Jetpack Compose**. ✨ La vista debería tener un aspecto similar a este. Pero, por favor, solo revisa el **código** 👀 si te has atascado; intenta hacerlo por tu cuenta.
 
 <details>
   <summary>Haz clic para ver el código</summary>
