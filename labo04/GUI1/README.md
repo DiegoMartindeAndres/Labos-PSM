@@ -844,3 +844,93 @@ Ahora copia el DropdownMenu y sus DropdownMenuItem en el otro botón.
 Te darás cuenta que el menú no se despliega en la vista de preview. ¿Has probado en la emulación?
 
 Efectivamente, no se ve nada. Eso es debido a que todavía no tenemos nada probramado en los eventos `onClick` de los botones. Eso lo haremos en el siguiente laboratorio, de momento solo hemos visto parte de la vista, pero más adelante vamos a ver el modelo y la lógica de la aplicación.
+
+
+Enhorabuena! Si has llegado hasta aquí tendrás tu primera vista realizada en Jetpack Compose. Tu vista tendría que tener una pinta parecida a esta. Pero, por favor, solo mira el código si te has atascado, intenta hacerlo por ti mismo.
+
+<details>
+  <summary>Haz clic para ver el código</summary>
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun ConversorUnidades() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Conversor de Unidades")
+        Spacer(modifier = Modifier.height(16.dp))
+        OutlinedTextField(
+            value = "Valor por defecto.",
+            onValueChange = {
+            },
+            label = { Text("Introduce un valor") },
+            placeholder = { Text("Escribe aquí...") }
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Row {
+            Box(
+                modifier = Modifier
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(onClick = { /* TODO */ }) {
+                    Text("Selecciona")
+                    Icon(
+                        Icons.Default.ArrowDropDown,
+                        contentDescription = "Flecha hacia abajo"
+                    )
+                }
+                DropdownMenu(expanded = false,
+                    onDismissRequest = {/*TODO*/ }) {
+                    DropdownMenuItem(
+                        text = { Text("Centímetros") },
+                        onClick = {/*TODO*/ })
+                    DropdownMenuItem(
+                        text = { Text("Metros") },
+                        onClick = {/*TODO*/ })
+                    DropdownMenuItem(
+                        text = { Text("Pies") },
+                        onClick = {/*TODO*/ })
+                    DropdownMenuItem(
+                        text = { Text("Milímetros") },
+                        onClick = {/*TODO*/ })
+                }
+            }
+            Spacer(modifier = Modifier.width(16.dp))
+            Box(
+                modifier = Modifier
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(onClick = { /* TODO */ }) {
+                    Text("Selecciona")
+                    Icon(
+                        Icons.Default.ArrowDropDown,
+                        contentDescription = "Flecha hacia abajo"
+                    )
+                }
+            }
+            DropdownMenu(expanded = false,
+                onDismissRequest = {/*TODO*/ }) {
+                DropdownMenuItem(
+                    text = { Text("Centímetros") },
+                    onClick = {/*TODO*/ })
+                DropdownMenuItem(
+                    text = { Text("Metros") },
+                    onClick = {/*TODO*/ })
+                DropdownMenuItem(
+                    text = { Text("Pies") },
+                    onClick = {/*TODO*/ })
+                DropdownMenuItem(
+                    text = { Text("Milímetros") },
+                    onClick = {/*TODO*/ })
+            }
+        }
+    }
+}
+```
+
+</details>
