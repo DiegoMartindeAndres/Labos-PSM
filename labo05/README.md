@@ -1,6 +1,15 @@
 # 🚀 Guía sobre la Gestión de Estado
 
-## 📦 Introducción: Gestión Logística en Jetpack Compose
+En esta primera guía sobre la gestión de estado, haremos una introducción con un ejemplo sencillo creando un pequeño juego sobre la gestión logística de paquetes, y luego pasaremos a nuestro proyecto sobre la conversión de unidades.
+
+## Tabla de Contenidos 📚
+
+- [🚀 Guía sobre la Gestión de Estado](#-guía-sobre-la-gestión-de-estado)
+- [📦 Introducción: Gestión Logística en Jetpack Compose](#-introducción-gestión-logística-en-jetpack-compose)
+- [🔄 Continuación con la aplicación de conversión de unidades](#-continuación-con-la-aplicación-de-conversión-de-unidades)
+
+
+# 📦 Introducción: Gestión Logística en Jetpack Compose
 
 Imagina que eres el gerente de una empresa de logística que entrega paquetes. El estado de los paquetes y las rutas de entrega es crucial para tomar decisiones. Aquí es donde entra en juego la **gestión del estado**. En Jetpack Compose, el manejo del estado es como un sistema de gestión logística que guía la dirección de tu aplicación cuando ocurren eventos, como acciones del usuario o actualizaciones de datos.
 
