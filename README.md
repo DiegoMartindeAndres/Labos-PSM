@@ -29,5 +29,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 4. Laboratorio 04:
    1. [Funciones Lambda](./labo04/lambdas/README.md)
    2. [Manual de Jetpack Compose: Construyendo tu primera interfaz gráfica](./labo04/GUI1/README.md)
+5. [Laboratorio 05: Gestión de estados App conversión de Unidades](./labo05/README.md) ⬅️ **[Evaluable]**
+   
  
 (Iremos añadiendo más laboratorios a medida que avance el curso).
