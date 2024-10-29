@@ -481,11 +481,13 @@ Por lo tanto, vamos a refactorizar renombrando la variable `convertionFactor` a 
 Para hacerlo más sencillo, vamos a inicializar las variables `inputConvertionFactor` y `outputConvertionFactor` con el valor `1.0` y eso nos forzará a inicializar `inputUnit` y `outputUnit` a Metros.
 
 ### 🔬 Retocar la función de los Cálculos de Conversión
-Para realizar una conversión, donde hacemos la operación, debemos multiplicar por el factor de conversión de entrada (esto ya lo teníamos) y dividir por el factor de conversión de salida.
+Para realizar la conversión, tenemos que pensar como sería la nueva fórmula. Recuerda que tenemos el factor de conversión de la unidad de entrada y el de la unidad de salida. ¿Cómo lo harías?
 
 <details>
   <summary>¿Puedes hacerlo sin ayuda?</summary>
 <br>
+
+Al valor de entrada, lo debemos multiplicar por el factor de conversión de entrada (esto ya lo teníamos) y dividir por el factor de conversión de salida. Además de multiplicar por cien y dividir por cien para calcular bien los decimales.
 
 ```kotlin
 val result = (inputValueDouble * inputConvertionFactor * 100 / outputConvertionFactor).roundToInt() / 100.0
@@ -643,3 +645,84 @@ Este ejemplo usa una fuente monoespaciada, con un tamaño de 32 SP y color rojo.
 
 
 
+## 🎓 Pro tip: Refactorizando el código 
+
+¿Alguna vez has mirado tu código y has notado que algunas partes se repiten varias veces? Esto suele ser una buena señal para plantearse una refactorización. Repetir código puede dificultar la mantenibilidad, aumentar la probabilidad de errores y hacer que el código sea menos legible. Siguiendo las mejores filosofías de programación 💻, el refactorizar suele ser una excelente idea.
+
+Piensa en tu código. ¿Crees que hay alguna parte que se está repitiendo? Para a pensarlo un momento.
+
+En nuestro caso, estamos desarrollando un convertidor de unidades con dos `DropdownMenu` que contienen información muy similar. ¿Qué pasaría si quisiéramos añadir una nueva unidad? Con la versión que tenemos hasta ahora, habría que modificar cada `DropdownMenu` uno por uno, duplicando líneas de código. Esto sería un lío conforme el proyecto se haga más grande.
+
+Vamos a ver una mejor solución que hace nuestro código más flexible y fácil de mantener ✍️:
+
+### Paso 1: Crear una Data Class para modelar las unidades 🛠️
+Primero definimos una `data class` llamada `UnitOption` para representar las unidades con un nombre y un factor de conversión.
+
+<details>
+  <summary>Pincha aquí para ver la definición de la data class.</summary>
+<br>
+
+```kotlin
+    data class UnitOption(val name: String, val conversionFactor: Double)
+```
+</details>
+<br>
+
+### Paso 2: Crear la lista de unidades 🔢
+Usamos `listOf` para crear una lista de `UnitOption` con las unidades que queremos manejar.
+
+<details>
+  <summary>Pincha aquí para ver la lista de unidades.</summary>
+<br>
+
+```kotlin
+    val unitsList = listOf(
+        UnitOption("Centímetros", 0.01),
+        UnitOption("Metros", 1.0),
+        UnitOption("Pies", 0.3048),
+        UnitOption("Milímetros", 0.001)
+    )
+```
+</details>
+<br>
+
+### Paso 3: Modificar el código para iterar sobre la lista ⏳
+Finalmente, iteramos sobre `unitsList` en cada `DropdownMenu` para generar los elementos dinámicamente, en lugar de escribir cada `DropdownMenuItem` por separado. De esta manera, si necesitamos agregar o modificar una unidad, solo cambiamos la lista.
+
+<details>
+  <summary>Pincha aquí para ver la implementación de DropdownMenu.</summary>
+<br>
+
+```kotlin
+    DropdownMenu(expanded = inputExpanded, onDismissRequest = { inputExpanded = false }) {
+        unitsList.forEach { unit ->
+            DropdownMenuItem(
+                text = { Text(unit.name) },
+                onClick = {
+                    inputExpanded = false
+                    inputUnit = unit.name
+                    inputConvertionFactor = unit.conversionFactor
+                    convertUnits()
+                }
+            )
+        }
+    }
+```
+
+OJO!! Esto es la solución para el primer DropdownMenu, tendrás que hacer lo mismo para el segundo DropdownMenu.
+
+</details>
+<br>
+
+### Ventajas de esta solución 🚀
+- **Fácil de mantener**: ¡Solo tienes que modificar la lista si añades una nueva unidad!
+- **Legibilidad**: El código queda más limpio y sencillo de entender.
+- **Reducción de errores**: Al no duplicar código, minimizamos el riesgo de cometer errores accidentales.
+
+¿Qué opinas de esta refactorización? Seguro que te ahorras muchas líneas de código y haces tu proyecto más sostenible a largo plazo 🌟.
+
+### Añade una nueva unidad 📏
+
+¿Cuánto de difícil sería añadir la unidad yarda? Prueba a hacerlo!
+
+Por cierto, 1 yarda es 0.9144 metros.
