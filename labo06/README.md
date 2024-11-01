@@ -184,7 +184,8 @@ Para reproducir sonidos, usaremos `MediaPlayer`. Vamos a añadir archivos de son
     </audio>
   
     - [Descargar el sonido win_sound.mp3](res/win_sound.mp3)
-<br><br>
+    - Cuidado al descargar, te abrirá el archivo en el repositorio, deberás después pulsar el botón de descarga que está arriba a la derecha y que es un icono de una flecha hacia abajo. Y ojo!! poner el nombre correcto del fichero `win_sound.mp3`
+ 
    - Sonido de derrota: 
   
     <audio controls>
@@ -193,8 +194,9 @@ Para reproducir sonidos, usaremos `MediaPlayer`. Vamos a añadir archivos de son
     </audio>
   
     - [Descargar el sonido lose_sound.mp3](res/lose_sound.mp3)
+    - Cuidado al descargar, te abrirá el archivo en el repositorio, deberás después pulsar el botón de descarga que está arriba a la derecha y que es un icono de una flecha hacia abajo. Y ojo!! poner el nombre correcto del fichero `lose_sound.mp3`
 
-2. **Crear y Configurar `MediaPlayer`**  
+1. **Crear y Configurar `MediaPlayer`**  
    `MediaPlayer` se debe crear dentro del contexto en el que se vaya a reproducir el sonido. En nuestro caso cuando llamamos a la función que ejecuta nuestra GUI le pasamos una función lambda para el evento `onPlaySound` que recibe un recurso de sonido y ahí creamos un `MediaPlayer` para reproducir el sonido y le mandamos reproducir el sonido que recibe por el parámetro `soundRes`. 
 
    Por lo tanto, cuando llamamos a nuestra función con la interfaz gráfica deberíamos configurar el `MediaPlayer` en el evento `onPlaySound` para que reproduzca el sonido adecuado.
@@ -222,7 +224,7 @@ Para reproducir sonidos, usaremos `MediaPlayer`. Vamos a añadir archivos de son
    - **`setOnCompletionListener`**: Configura un listener para liberar el `MediaPlayer` una vez que el sonido ha terminado de reproducirse. Esto es crucial para evitar fugas de memoria.
    - **`start()`**: Inicia la reproducción del sonido.
 
-3. **Reproducir Sonidos**
+2. **Reproducir Sonidos**
    Ahora lo único que queda es reproducir el sonido adecuado cuando el usuario gane o pierda. Debes colocar la lógica de reproducción del sonido justo después de determinar el resultado de la partida. Por ejemplo, si el resultado es "Ganaste", reproducimos un sonido de victoria, y si es "Perdiste", reproducimos un sonido de derrota.
    
    Código Sugerido
