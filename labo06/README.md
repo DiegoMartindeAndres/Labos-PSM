@@ -8,6 +8,13 @@ Y para terminar, ejecutaremos nuestra aplicación en un teléfono Android físic
 
 ¡Manos a la obra! 👷‍♂️👷‍♀️
 
+# Tabla de contenidos 📋
+
+- [🚽✂️📄 Laboratorio: Piedra, Papel o Tijera con GUI](#️-laboratorio-piedra-papel-o-tijera-con-gui)
+- [Tabla de contenidos 📋](#tabla-de-contenidos-)
+- [Es hora de probar nuestra aplicación en un dispositivo físico Android 📱](#es-hora-de-probar-nuestra-aplicación-en-un-dispositivo-físico-android-)
+- [¿Necesitas ayuda? 🆘](#necesitas-ayuda-)
+
 ## Versión 1: La Base de la App 🎲
 
 ### Objetivo
@@ -351,7 +358,7 @@ Para reproducir sonidos, usaremos `MediaPlayer`. Vamos a añadir archivos de son
 Para ello recomiendo seguir la documentación oficial de Android Studio para [ejecutar aplicaciones en un dispositivo físico](https://developer.android.com/studio/run/device?hl=es-419).
 
 
-# ¿Necesitas ayuda?
+# ¿Necesitas ayuda? 🆘
 
 <details>
   <summary> Control + W </summary>

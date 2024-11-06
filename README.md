@@ -30,6 +30,7 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
    1. [Funciones Lambda](./labo04/lambdas/README.md)
    2. [Manual de Jetpack Compose: Construyendo tu primera interfaz gráfica](./labo04/GUI1/README.md)
 5. [Laboratorio 05: Gestión de estados App conversión de Unidades](./labo05/README.md) ⬅️ **[Evaluable]**
+6. [Laboratorio 06: 🚽✂️📄 Piedra, Papel o Tijera con GUI](./labo06/README.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬅️ **[Evaluable]**
    
  
 (Iremos añadiendo más laboratorios a medida que avance el curso).
