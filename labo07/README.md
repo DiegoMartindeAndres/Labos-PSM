@@ -1,4 +1,4 @@
-# 📱 Descripción general de la aplicación: Lista de la compra
+# 📱 Descripción general de la aplicación
 
 La aplicación que construiremos en este laboratorio es una **lista de compras interactiva**, en la que el usuario podrá añadir, eliminar y marcar elementos como comprados. Además, la interfaz se hará completamente con **Jetpack Compose**, aprovechando todas las capacidades modernas para construir aplicaciones atractivas y eficientes en Android.
 
@@ -808,7 +808,7 @@ fun ShoppingListGUI(paddingValues: PaddingValues) {
 En este apartado vamos a diseñar la apariencia de cada elemento de nuestra columna perezosa (*Lazy Column*). En la interfaz de usuario deseada, cada elemento contiene dos textos (nombre y cantidad) y dos botones con íconos (borrar y modificar). Nos vamos a enfocar en definir cómo debería verse cada ítem en la lista de compras.
 
 <div align="center">
-    <img src="img/LazyColumn.png" alt="Lazy Column" width="50%">
+    <img src="img/LazyColumn.png" alt="Lazy Column">
 </div>
 
 ## ✏ Creación de un Composable para el ítem de la lista
@@ -991,6 +991,67 @@ Y en la interfaz de usuario, deberíamos ver algo similar a esto:
 <div align="center">
     <img src="img/LazyColumnIconos.PNG" alt="Con Botones">
 </div>
+
+Si te fijas, los botones de editar y de borrar no están perfectamente alineados.
+
+### 📏 Alineando los Botones Correctamente
+
+Después de añadir los botones a la fila, notamos que los botones no están alineados como nos gustaría. En particular, queremos que los botones aparezcan a la derecha de la fila, mientras que el nombre del producto y la cantidad se mantienen a la izquierda. Para solucionar este problema, necesitamos ajustar los modificadores de los componentes de la interfaz.
+
+#### 🔧 Cambios Necesarios
+
+Para alinear los botones a la derecha, vamos a hacer uso del modificador **`.weight(1f)`** en el `Column` que contiene el nombre y la cantidad del ítem. De esta manera, esta columna ocupará todo el espacio disponible, empujando los botones hacia la derecha de la fila. El código de `ShoppingListItem` debería verse así:
+
+```kotlin
+@Composable
+fun ShoppingListItem(
+    item: ShoppingItem,
+    onEditClick: () -> Unit,
+    onDeleteClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth()
+            .border(
+                border = BorderStroke(2.dp, Color(0xFF018786)),
+                shape = RoundedCornerShape(20)
+            ),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Column(
+            modifier = Modifier
+                .weight(1f) // Añadir este peso permite que los botones se alineen a la derecha
+                .padding(8.dp)
+        ) {
+            Text(text = item.name)
+            Text(text = "Qty: ${item.quantity}")
+        }
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(onClick = onEditClick) {
+                Icon(imageVector = Icons.Default.Edit, contentDescription = "Edit")
+            }
+            IconButton(onClick = onDeleteClick) {
+                Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete")
+            }
+        }
+    }
+}
+```
+
+#### ✨ Explicación del Cambio
+
+- **`.weight(1f)`**: Este modificador asegura que la `Column` ocupe todo el espacio disponible en la fila, empujando cualquier elemento subsiguiente, como los botones, hacia el final de la fila.
+- **`.fillMaxWidth()`** en el `Row`: Nos aseguramos de que la fila ocupe todo el ancho disponible, permitiendo así que los elementos se distribuyan de manera correcta.
+
+Al añadir este pequeño ajuste, los botones de editar y eliminar se alinearán a la derecha, mientras que el nombre y la cantidad del ítem se quedarán a la izquierda, creando un diseño más limpio y organizado.
+
+Ahora, la interfaz debería verse mucho más ordenada y los botones estarán alineados a la derecha como queríamos.
+
+!!! Poner una imagen !!!
 
 ## 📝 Editor de Items de la Lista de Compras
 
@@ -1247,11 +1308,6 @@ Este ajuste asegura que los botones estén distribuidos correctamente en la inte
 
 
 # Código final
-
-<details>
-  <summary>¿Puedes hacerlo sin ayuda?</summary>
-<br>
-
 
 ```kotlin
 
@@ -1542,4 +1598,3 @@ fun ShoppingItemEditor(item: ShoppingItem,onEditComplete: (String, Int) -> Unit)
 ```
 
 
-</details>
