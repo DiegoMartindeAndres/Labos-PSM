@@ -1193,7 +1193,9 @@ LazyColumn {
 
 #### Cuando se realiza una edición, los pasos a seguir son: 
 
-Info: debes saber los conceptos de `map` y `copy` en Kotlin.
+Info: debes saber los conceptos de `map` y `copy` en Kotlin. 
+
+[Puedes encontrar un manual aquí.](CopyMapLet.md)
 
 1. Crear una función lambda que recibe dos parámetros: `editedName` y `editedQuantity`.
 2. Actualizar la lista de artículos (`items`) mapeando cada elemento:
