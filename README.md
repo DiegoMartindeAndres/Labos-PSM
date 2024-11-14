@@ -32,5 +32,6 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 5. [Laboratorio 05: Gestión de estados App conversión de Unidades](./labo05/README.md) ⬅️ **[Evaluable]**
 6. [Laboratorio 06: 🚽✂️📄 Piedra, Papel o Tijera con GUI](./labo06/README.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬅️ **[Evaluable]**
 7. [Laboratorio 07: 📱 App Lista de la compra](./labo07/README.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬅️ **[Evaluable]**   
+   1. [Manual Kotlin: Map, Copy, Let](/labo07/CopyMapLet.md)
  
 (Iremos añadiendo más laboratorios a medida que avance el curso).
