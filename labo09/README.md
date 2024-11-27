@@ -817,9 +817,9 @@ init {
 
 Esto garantiza que las categorías se obtengan cuando el `CategoriesViewModel` sea inicializado, y se ejecuta en segundo plano para no afectar la experiencia del usuario.
 
-<!--
-!!! ESTARÍA BIEN PONER EL CóDIGO DEL VIEWMODEL COMPLETO
--->
+
+[Si quieres ir al código del ViewModel puedes hacer clickaquí](#viewmodel-code)
+
 
 
 
@@ -1151,4 +1151,248 @@ Este flujo permite que la aplicación cargue datos de forma eficiente y actualic
 
 Aquí tienes el código de las clases.
 
-PRÓXIMAMENTE!
+
+<details>
+  <summary>Modelo</summary>
+<br>
+
+```kotlin
+
+package es.uva.sg.psm.recetasapp
+
+data class Category(
+    val idCategory: String,
+    val strCategory: String,
+    val strCategoryThumb: String,
+    val strCategoryDescription: String
+)
+
+
+data class CategoriesResponse(
+    val categories: List<Category>
+)
+```
+
+</details>
+<br>
+
+<a id="viewmodel-code"></a>
+<details>
+  <summary>ViewModel</summary>
+<br>
+
+```kotlin
+
+package es.uva.sg.psm.recetasapp
+
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+
+
+class CategoriesViewModel : ViewModel() {
+
+    private val _categoriesState = mutableStateOf(CategoriesFetchState())
+    val categoriesState: State<CategoriesFetchState> = _categoriesState
+
+    data class CategoriesFetchState(
+        val loading: Boolean = true,
+        val categories: List<Category> = emptyList(),
+        val error: String? = null
+    )
+
+    init {
+        fetchCategories()
+    }
+
+    private fun fetchCategories() {
+        viewModelScope.launch {
+            try {
+                val response = recipeService.getCategories()
+                _categoriesState.value = _categoriesState.value.copy(
+                    loading = false,
+                    categories = response.categories,
+                    error = null
+                )
+            } catch (e: Exception) {
+                _categoriesState.value = _categoriesState.value.copy(
+                    loading = false,
+                    error = "Error obteniendo las categorías: ${e.message}"
+                )
+            }
+        }
+    }
+
+}
+
+```
+
+</details>
+<br>
+
+<details>
+  <summary>Servicio</summary>
+<br>
+
+```kotlin
+
+package es.uva.sg.psm.recetasapp
+
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+
+private val retrofit = Retrofit.Builder()
+    .baseUrl("https://www.themealdb.com/api/json/v1/1/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+val recipeService = retrofit.create(APIService::class.java)
+
+interface APIService {
+    @GET("categories.php")
+    suspend fun getCategories():CategoriesResponse
+}
+
+```
+
+</details>
+<br>
+
+<details>
+  <summary>GUI</summary>
+<br>
+
+```kotlin
+
+package es.uva.sg.psm.recetasapp
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import coil.compose.rememberAsyncImagePainter
+
+
+
+@Composable
+fun CategoriesGUI(modifier: Modifier = Modifier){
+    val recipeViewModel: CategoriesViewModel = viewModel()
+    val viewState by recipeViewModel.categoriesState
+    Box(modifier = Modifier.fillMaxSize()){
+        when{
+            viewState.loading ->{
+                CircularProgressIndicator(modifier.align(Alignment.Center))
+            }
+
+            viewState.error != null ->{
+                Text("Ocurrió un error: $viewState.error")
+            }
+            else ->{
+                CategoryScreen(categories = viewState.categories )
+            }
+        }
+    }
+}
+
+@Composable
+fun CategoryScreen(categories: List<Category>) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2), // Definimos que tenga dos columnas
+        modifier = Modifier.fillMaxSize()
+    ) {
+        items(categories) { category ->
+            CategoryItem(category = category)
+        }
+    }
+}
+
+
+@Composable
+fun CategoryItem(category: Category) {
+    Column(
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = rememberAsyncImagePainter(model = category.strCategoryThumb),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxSize()
+                .aspectRatio(1f)
+        )
+        Text(
+            text = category.strCategory,
+            color = Color.Black,
+            style = TextStyle(fontWeight = FontWeight.Bold),
+            modifier = Modifier.padding(top = 4.dp)
+        )
+    }
+}
+
+
+```
+
+</details>
+<br>
+
+<details>
+  <summary>Main Activity</summary>
+<br>
+
+```kotlin
+
+package es.uva.sg.psm.recetasapp
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
+import es.uva.sg.psm.recetasapp.ui.theme.RecetasAppTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            RecetasAppTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    CategoriesGUI(
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .fillMaxSize()
+                    )
+                }
+            }
+        }
+    }
+}
+
+```
+
+</details>
+<br>
