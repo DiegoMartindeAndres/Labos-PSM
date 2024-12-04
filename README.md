@@ -35,6 +35,9 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
    1. [Manual Kotlin: Map, Copy, Let](/labo07/CopyMapLet.md)
 8. Laboratorio 08: 📱 App Lista de la compra usando MVVM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬅️ **[Evaluable]**
 9. [Laboratorio 09: 🌐 Aplicación de recetas de comida.](/labo09/README.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬅️ **[Evaluable]**
+10. Laboratorio 10: 🌐 Navegación
+    1.  [🚀 Implementación básica de Navegación en Jetpack Compose](/labo10/EjNavegacion/README.md)
+    2.  [🍽️ Continuación aplicación de recetas: Navegación a los detalles de categoría.](/labo10/RecetasNavegacion/README.md)
 
 
 (Iremos añadiendo más laboratorios a medida que avance el curso).
