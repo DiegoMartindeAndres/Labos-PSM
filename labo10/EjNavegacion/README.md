@@ -399,7 +399,7 @@ Hay que tocar en dos partes:
 
 De tal manera que el código se nos quedaría de la siguiente manera:
 
-    ```kotlin
+```kotlin
         composable("firstscreen") {
             FirstScreen(
                 onNavigateToSecondScreen = { name ->
@@ -407,10 +407,9 @@ De tal manera que el código se nos quedaría de la siguiente manera:
                 }
             )
         }
-    ```
+```
 
-
-2. En la definición de `SecondScreen`, la función debe aceptar un `String` en la definición de la ruta. Y además, la función `SecondScreen` acepta un `String`, por lo tanto debemos definirlo.
+1. En la definición de `SecondScreen`, la función debe aceptar un `String` en la definición de la ruta. Y además, la función `SecondScreen` acepta un `String`, por lo tanto debemos definirlo.
 
     ```kotlin
     // OJO!! este código tiene un error.
