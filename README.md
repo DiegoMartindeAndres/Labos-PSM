@@ -38,6 +38,10 @@ Ante cualquier error o sugerencia, por favor, contáctame en mi correo: [diego.m
 10. Laboratorio 10: 🌐 Navegación
     1.  [🚀 Implementación básica de Navegación en Jetpack Compose](/labo10/EjNavegacion/README.md)
     2.  [🍽️ Continuación aplicación de recetas: Navegación a los detalles de categoría.](/labo10/RecetasNavegacion/README.md)
+11. Laboratorio 11: 💾 Room Database
+    1.  [🛠️ Preparación del proyecto para trabajar con ROOM](/labo11/1-Prep/README.md)
+    2.  [🚀 Aplicación de lista de deseos básica con Scaffold y Floating Action Button](/labo11/2-GUI/README.md)
+    3.  [📱 Aplicación Lista de deseos con `Room Database`](/labo11/3-DDBB/README.md)
 
 
 (Iremos añadiendo más laboratorios a medida que avance el curso).
