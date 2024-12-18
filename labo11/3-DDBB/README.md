@@ -1909,7 +1909,8 @@ class MainActivity : ComponentActivity() {
 
 ## `Navigation.kt`
 
-```kotlinpackage es.uva.sg.psm.listadedeseos
+```kotlin
+package es.uva.sg.psm.listadedeseos
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
