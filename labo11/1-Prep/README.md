@@ -214,7 +214,7 @@ Solo hay que quitar el `apply false` de la línea que acabamos de añadir. Deber
 ```kotlin
 plugins {
     // Otros plugins y alias que ya tengas
-    id("com.google.devtools.ksp") version "2.1.0-1.0.29" apply false   
+    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
 }
 ```
 Sincroniza y ejecuta!
