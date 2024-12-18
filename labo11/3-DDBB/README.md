@@ -9,12 +9,9 @@ Permitirá actulizar deseos, añadir deseos, eliminar deseos usando el gesto `sw
     <img src="img/app.gif" alt="Ejemplo app.">
 </div>
 
-
-## 📚 Tabla de Contenidos
-
 # 📚 Tabla de Contenidos
-- [� Aplicación Lista de deseos con `Room Database`](#-aplicación-lista-de-deseos-con-room-database)
-- [📚 Tabla de Contenidos](#-tabla-de-contenidos-1)
+- [📱 Aplicación Lista de deseos con `Room Database`](#-aplicación-lista-de-deseos-con-room-database)
+- [📚 Tabla de Contenidos](#-tabla-de-contenidos)
 - [Configuración de la Clase de Aplicación 🌐](#configuración-de-la-clase-de-aplicación-)
 - [Código Completo de la Aplicación](#código-completo-de-la-aplicación)
 
