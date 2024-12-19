@@ -47,10 +47,12 @@ Salva, sincroniza y compila.
 
 En el archivo `build.gradle.kts (Module :app)` añade lo siguiente a la sección de plugins:
 
+```kotlin
 plugins {
    // Plugins que ya tengas
    alias(libs.plugins.compose.compiler)
 }
+```
 
 Salva, sincroniza y compila.
 
